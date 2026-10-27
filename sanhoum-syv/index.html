@@ -59,8 +59,7 @@ h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.02;letter-spacin
 .hero{position:relative;height:330vh;background:var(--night)}
 .hero .pin{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden}
 .hero .ly{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 60%;will-change:opacity,clip-path,transform}
-#s2{clip-path:inset(100% 0 0 0)}
-#s3{opacity:0}
+#seq{display:block}
 .hero .shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(12,14,13,.72) 0%,rgba(12,14,13,.35) 45%,rgba(12,14,13,0) 70%),linear-gradient(0deg,rgba(12,14,13,.7) 0%,rgba(12,14,13,0) 40%);pointer-events:none}
 .hero .copy{position:absolute;left:max(20px,calc((100vw - 1240px)/2 + 20px));bottom:130px;max-width:600px;color:#fff;z-index:3}
 .hero h1{font-size:clamp(44px,5.2vw,78px);margin:14px 0 18px}
@@ -235,9 +234,9 @@ h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.02;letter-spacin
 <main>
 <section class="hero" id="hero">
   <div class="pin">
+    <img class="ly" id="f0" src="img/seq/00.webp" alt="Дом из клееного бруса SUN HOME">
+    <canvas class="ly" id="seq" aria-hidden="true"></canvas>
     <img class="ly" id="s1" src="img/s1_blueprint.webp" alt="">
-    <img class="ly" id="s2" src="img/s2_wood.webp" alt="">
-    <img class="ly" id="s3" src="img/s3_photo.webp" alt="Дом из клееного бруса SUN HOME">
     <div class="shade"></div>
     <div class="prog" id="prog"></div>
     <div class="copy">
@@ -248,8 +247,8 @@ h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.02;letter-spacin
     </div>
     <div class="stages" id="stages">
       <div class="stg on"><i>01</i><b>Проект</b><span>Архитектор рисует дом под ваш участок и семью</span></div>
-      <div class="stg"><i>02</i><b>Домокомплект</b><span>Брус режется на станке по чертежу, с пазами и маркировкой</span></div>
-      <div class="stg"><i>03</i><b>Сборка</b><span>Бригада собирает дом, инженер проверяет каждый этап</span></div>
+      <div class="stg"><i>02</i><b>Сборка</b><span>Домокомплект с завода, бригада собирает стены и кровлю</span></div>
+      <div class="stg"><i>03</i><b>Отделка</b><span>Окна, терраса, инженерия, инженер проверяет каждый этап</span></div>
       <div class="stg"><i>04</i><b>Ваш дом</b><span>Передаём ключи и документы</span></div>
     </div>
     <div class="facts"><div class="in">
@@ -388,25 +387,38 @@ h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.02;letter-spacin
   const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
   // шапка
   const top=$('#top'), hero=$('#hero');
-  // первый экран: чертёж → брус → дом
-  const s2=$('#s2'), s3=$('#s3'), prog=$('#prog'), stg=$$('.stg');
+  // первый экран: чертёж → таймлапс стройки → готовый дом
+  const N=56, cv=$('#seq'), cx=cv.getContext('2d'), bp=$('#s1'), prog=$('#prog'), stg=$$('.stg'), frames=[];
   const cl=(v,a,b)=>Math.min(1,Math.max(0,(v-a)/(b-a)));
-  let ticking=false;
+  function size(){const d=Math.min(devicePixelRatio||1,1.5);cv.width=Math.round(cv.clientWidth*d);cv.height=Math.round(cv.clientHeight*d);}
+  function cover(im){const cw=cv.width,ch=cv.height,r=Math.max(cw/im.naturalWidth,ch/im.naturalHeight),w=im.naturalWidth*r,h=im.naturalHeight*r;return [(cw-w)/2,(ch-h)*.6,w,h];}
+  function near(i){for(let d=0;d<N;d++){if(frames[i-d]&&frames[i-d].ok)return frames[i-d];if(frames[i+d]&&frames[i+d].ok)return frames[i+d];}return null;}
+  function draw(t){
+    const f=t*(N-1), i=Math.floor(f), k=f-i, a=near(i), b=frames[i+1]&&frames[i+1].ok?frames[i+1]:null;
+    if(!a) return; cx.globalAlpha=1; cx.drawImage(a,...cover(a));
+    if(b&&k>0){cx.globalAlpha=k;cx.drawImage(b,...cover(b));cx.globalAlpha=1;}
+  }
+  // порядок загрузки: первый, последний, каждый 8-й, потом остальные
+  const order=[0,N-1]; for(let i=8;i<N-1;i+=8)order.push(i); for(let i=0;i<N;i++) if(!order.includes(i)) order.push(i);
+  let loaded=0;
+  order.forEach((n,j)=>{const im=new Image();im.decoding='async';frames[n]=im;
+    setTimeout(()=>{im.onload=()=>{im.ok=true;loaded++;if(loaded<4)frame();};im.src=`img/seq/${String(n).padStart(2,'0')}.webp`;}, j<10?0:300+j*25);});
+  let ticking=false, last=-1;
   function frame(){
     ticking=false;
     const r=hero.getBoundingClientRect(), total=hero.offsetHeight-innerHeight;
     const p=Math.min(1,Math.max(0,-r.top/total));
-    const wood=cl(p,.12,.48), photo=cl(p,.5,.78);
-    s2.style.clipPath=`inset(${(1-wood)*100}% 0 0 0)`;
-    s3.style.opacity=photo;
-    s3.style.transform=`scale(${1.06-photo*.06+cl(p,.8,1)*.04})`;
+    bp.style.opacity=1-cl(p,.08,.2);
+    const t=cl(p,.14,.94);
+    if(Math.abs(t-last)>.001||last<0){draw(t);last=t;}
     prog.style.width=(p*100)+'%';
-    const st=p<.12?0:p<.48?1:p<.8?2:3;
+    const st=p<.14?0:t<.5?1:t<.9?2:3;
     stg.forEach((e,i)=>e.classList.toggle('on',i===st));
     top.classList.toggle('solid', r.bottom<=80);
   }
+  addEventListener('resize',()=>{size();last=-1;frame();}); size();
   addEventListener('scroll',()=>{ if(!ticking){ticking=true;requestAnimationFrame(frame);} },{passive:true});
-  addEventListener('resize',frame); frame();
+  frame();
   // мобильное меню
   const dr=$('#drawer');
   $('#burger').onclick=()=>dr.classList.add('open'); $('#close').onclick=()=>dr.classList.remove('open');
