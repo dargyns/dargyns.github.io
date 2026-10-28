@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Roof Development — плоская кровля в Казани</title>
+<meta name="description" content="Монтаж мембранной, наплавляемой и эксплуатируемой плоской кровли в Казани и Татарстане. Гарантия на работу 5 лет.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F3F0EA;
+  --paper:#FBFAF7;
+  --ink:#15191C;
+  --muted:#5E6468;
+  --line:rgba(21,25,28,.14);
+  --accent:#3A5566;
+  --accent-dark:#2A3F4C;
+  --serif:"Cormorant Garamond",Georgia,serif;
+  --sans:"Manrope",system-ui,-apple-system,sans-serif;
+  --pad:20px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);font-size:16px;line-height:1.6;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{width:100%;max-width:1240px;margin:0 auto;padding:0 var(--pad)}
+.eyebrow{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);font-weight:600}
+h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.05;letter-spacing:-.01em}
+h2{font-size:clamp(38px,9vw,76px)}
+section{padding:96px 0}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:56px;padding:0 28px;border-radius:999px;font-weight:600;font-size:15px;transition:background .3s,color .3s,transform .3s;white-space:nowrap}
+.btn-light{background:var(--paper);color:var(--ink)}
+.btn-light:hover{background:#fff;transform:translateY(-2px)}
+.btn-ghost{border:1px solid rgba(255,255,255,.45);color:#fff}
+.btn-ghost:hover{background:rgba(255,255,255,.12)}
+.btn-dark{background:var(--accent);color:#fff}
+.btn-dark:hover{background:var(--accent-dark);transform:translateY(-2px)}
+.btn-line{border:1px solid var(--line);color:var(--ink)}
+.btn-line:hover{border-color:var(--ink)}
+
+/* header */
+header{position:fixed;inset:0 0 auto 0;z-index:50;transition:background .4s,box-shadow .4s}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{font-family:var(--serif);font-size:22px;font-weight:600;color:#fff;transition:color .4s;letter-spacing:.01em}
+.logo span{font-style:italic;font-weight:500}
+.head-phone{font-size:14px;font-weight:600;color:#fff;transition:color .4s;display:flex;align-items:center;gap:8px}
+.head-phone i{width:8px;height:8px;border-radius:50%;background:#8FB3A0;display:inline-block}
+header.scrolled{background:rgba(243,240,234,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 1px 0 var(--line)}
+header.scrolled .logo,header.scrolled .head-phone{color:var(--ink)}
+nav{display:none}
+
+/* hero */
+.hero{position:relative;min-height:100vh;min-height:100svh;display:flex;align-items:flex-end;color:#fff;padding:0 0 40px;overflow:hidden}
+.hero-img{position:absolute;inset:0;background:#2a3238 url(img/1.png) center/cover no-repeat;transform:scale(1.06);animation:heroZoom 2.4s cubic-bezier(.2,.7,.2,1) forwards}
+@keyframes heroZoom{to{transform:scale(1)}}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,19,22,.45) 0%,rgba(15,19,22,.15) 35%,rgba(15,19,22,.82) 100%)}
+.hero .wrap{position:relative;z-index:2}
+.hero .eyebrow{color:rgba(255,255,255,.75);margin-bottom:20px}
+.hero h1{font-size:clamp(48px,13vw,120px);max-width:11ch;margin-bottom:24px}
+.hero h1 em{font-style:italic}
+.hero p{font-size:16px;max-width:520px;color:rgba(255,255,255,.85);margin-bottom:32px}
+.hero-btns{display:flex;flex-direction:column;gap:12px}
+.hero-btns .btn{width:100%}
+
+/* facts */
+.facts{padding:0;background:var(--ink);color:#fff}
+.facts .wrap{display:grid;grid-template-columns:1fr;}
+.fact{padding:28px 0;border-bottom:1px solid rgba(255,255,255,.12);display:flex;align-items:baseline;gap:18px}
+.fact:last-child{border-bottom:0}
+.fact b{font-family:var(--serif);font-weight:500;font-size:48px;line-height:1;min-width:120px}
+.fact span{font-size:14px;color:rgba(255,255,255,.65);max-width:220px}
+
+/* manifest */
+.manifest{padding:110px 0 70px}
+.manifest p{font-family:var(--serif);font-size:clamp(32px,7.4vw,64px);line-height:1.12;max-width:20ch}
+.manifest em{font-style:italic;color:var(--accent)}
+.about{padding-top:0}
+.about .wrap{display:grid;gap:28px}
+.about p{color:var(--muted);max-width:560px}
+.bases{display:flex;flex-wrap:wrap;gap:8px}
+.bases span{border:1px solid var(--line);border-radius:999px;padding:8px 16px;font-size:13px;font-weight:500}
+
+/* services */
+.services{background:var(--paper)}
+.sec-head{display:grid;gap:18px;margin-bottom:56px}
+.svc{display:grid;grid-template-columns:1fr auto;gap:8px 20px;padding:30px 0;border-top:1px solid var(--line);transition:padding .4s}
+.svc:last-child{border-bottom:1px solid var(--line)}
+.svc-num{grid-column:1/-1;font-size:12px;color:var(--muted);letter-spacing:.12em}
+.svc h3{font-size:30px}
+.svc-price{font-weight:600;font-size:15px;align-self:center;white-space:nowrap;color:var(--accent)}
+.svc p{grid-column:1/-1;color:var(--muted);font-size:15px;max-width:560px}
+.svc-note{margin-top:28px;font-size:13px;color:var(--muted);max-width:560px}
+
+/* works */
+.works .sec-head{margin-bottom:40px}
+.gallery{display:grid;grid-template-columns:1fr;gap:14px}
+.ph{position:relative;overflow:hidden;background:#d9d4cb;border-radius:4px}
+.ph img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/3;transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
+.ph:hover img{transform:scale(1.04)}
+.ph figcaption{position:absolute;left:0;right:0;bottom:0;padding:40px 18px 16px;color:#fff;font-size:14px;font-weight:500;background:linear-gradient(transparent,rgba(10,13,15,.7))}
+
+/* advantages */
+.adv{background:var(--accent);color:#fff}
+.adv .eyebrow{color:rgba(255,255,255,.6)}
+.adv-list{display:grid;gap:0;margin-top:56px}
+.adv-item{padding:32px 0;border-top:1px solid rgba(255,255,255,.18);display:grid;gap:10px}
+.adv-item h3{font-size:30px}
+.adv-item p{color:rgba(255,255,255,.75);font-size:15px;max-width:460px}
+.adv-item small{font-size:12px;letter-spacing:.14em;color:rgba(255,255,255,.5)}
+
+/* steps */
+.steps-list{list-style:none;display:grid;gap:0;margin-top:56px;counter-reset:s}
+.steps-list li{counter-increment:s;padding:28px 0 28px 64px;border-top:1px solid var(--line);position:relative}
+.steps-list li::before{content:"0" counter(s);position:absolute;left:0;top:22px;font-family:var(--serif);font-size:36px;color:var(--accent);line-height:1}
+.steps-list b{display:block;font-size:17px;font-weight:600;margin-bottom:4px}
+.steps-list span{color:var(--muted);font-size:15px}
+.steps-total{margin-top:36px;font-family:var(--serif);font-size:28px;font-style:italic}
+
+/* faq */
+.faq{background:var(--paper)}
+.faq-list{margin-top:48px}
+details{border-top:1px solid var(--line)}
+details:last-child{border-bottom:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;padding:26px 44px 26px 0;position:relative;font-family:var(--serif);font-size:26px;line-height:1.2}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"";position:absolute;right:6px;top:50%;width:14px;height:14px;border-right:1.5px solid var(--ink);border-bottom:1.5px solid var(--ink);transform:translateY(-70%) rotate(45deg);transition:transform .35s}
+details[open] summary::after{transform:translateY(-20%) rotate(-135deg)}
+details p{padding:0 0 28px;color:var(--muted);max-width:620px}
+
+/* contacts */
+.contacts{background:var(--ink);color:#fff;padding-bottom:40px}
+.contacts .eyebrow{color:rgba(255,255,255,.55)}
+.contacts h2{max-width:12ch;margin:18px 0 28px}
+.contacts .lead{color:rgba(255,255,255,.7);max-width:480px;margin-bottom:40px}
+.c-btns{display:flex;flex-direction:column;gap:12px;margin-bottom:64px}
+.c-btns .btn{width:100%}
+.c-grid{display:grid;gap:32px;padding-top:40px;border-top:1px solid rgba(255,255,255,.14)}
+.c-grid h4{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.5);font-weight:600;margin-bottom:10px}
+.c-grid a,.c-grid p{display:block;font-size:17px;line-height:1.7;color:#fff}
+.c-grid a:hover{color:#AFC6D3}
+footer{margin-top:72px;padding-top:24px;border-top:1px solid rgba(255,255,255,.1);display:flex;flex-direction:column;gap:6px;font-size:12px;color:rgba(255,255,255,.4)}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(32px);transition:opacity 1s cubic-bezier(.2,.7,.2,1),transform 1s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.hero-img{animation:none;transform:none}html{scroll-behavior:auto}}
+
+/* tablet+ */
+@media (min-width:760px){
+  :root{--pad:40px}
+  section{padding:140px 0}
+  .hero{padding-bottom:72px}
+  .hero-btns{flex-direction:row}
+  .hero-btns .btn{width:auto}
+  .facts .wrap{grid-template-columns:repeat(3,1fr)}
+  .fact{border-bottom:0;border-right:1px solid rgba(255,255,255,.12);padding:40px 32px 40px 0;flex-direction:column;gap:10px}
+  .fact+.fact{padding-left:32px}
+  .fact:last-child{border-right:0}
+  .fact b{font-size:60px}
+  .gallery{grid-template-columns:repeat(6,1fr);gap:18px}
+  .ph:nth-child(1){grid-column:span 4;grid-row:span 2}
+  .ph:nth-child(1) img{aspect-ratio:auto;height:100%;min-height:520px}
+  .ph:nth-child(2),.ph:nth-child(3){grid-column:span 2}
+  .ph:nth-child(4),.ph:nth-child(5),.ph:nth-child(6){grid-column:span 2}
+  .ph:nth-child(4) img,.ph:nth-child(5) img,.ph:nth-child(6) img{aspect-ratio:3/4}
+  .ph:nth-child(7){grid-column:span 3}
+  .ph:nth-child(8){grid-column:span 3}
+  .ph:nth-child(9){grid-column:span 6}
+  .ph:nth-child(9) img{aspect-ratio:21/9}
+  .c-btns{flex-direction:row;flex-wrap:wrap}
+  .c-btns .btn{width:auto}
+  .c-grid{grid-template-columns:repeat(3,1fr)}
+  footer{flex-direction:row;justify-content:space-between}
+}
+@media (min-width:1080px){
+  nav{display:flex;gap:34px;font-size:14px;font-weight:500;color:rgba(255,255,255,.85);transition:color .4s}
+  nav a:hover{opacity:.6}
+  header.scrolled nav{color:var(--ink)}
+  .hero h1{max-width:12ch}
+  .about .wrap{grid-template-columns:1fr 1fr;align-items:end}
+  .sec-head{grid-template-columns:1fr 1fr;align-items:end}
+  .sec-head p{color:var(--muted);max-width:440px;justify-self:end}
+  .svc{grid-template-columns:80px 1fr 1.2fr auto;align-items:baseline;gap:32px;padding:40px 0}
+  .svc-num{grid-column:auto}
+  .svc p{grid-column:auto}
+  .svc:hover{padding-left:16px}
+  .svc h3{font-size:36px}
+  .adv .wrap{display:grid;grid-template-columns:1fr 1.3fr;gap:80px}
+  .adv-list{margin-top:0;grid-template-columns:1fr 1fr;column-gap:48px}
+  .steps-list{grid-template-columns:repeat(4,1fr);gap:32px}
+  .steps-list li{padding:80px 0 0;border-top:1px solid var(--ink)}
+  .steps-list li::before{top:20px;font-size:44px}
+  .faq .wrap{display:grid;grid-template-columns:1fr 1.4fr;gap:80px}
+  .faq-list{margin-top:0}
+  .contacts .top{display:grid;grid-template-columns:1.3fr 1fr;gap:60px;align-items:end;margin-bottom:64px}
+  .c-btns{margin-bottom:0;justify-content:flex-end}
+}
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <div class="wrap">
+    <a href="#top" class="logo">Roof <span>Development</span></a>
+    <nav>
+      <a href="#services">Услуги</a>
+      <a href="#works">Объекты</a>
+      <a href="#process">Как работаем</a>
+      <a href="#faq">Вопросы</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+    <a href="tel:+78432126040" class="head-phone"><i></i>+7 843 212-60-40</a>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="hero-img" role="img" aria-label="Плоская кровля, смонтированная Roof Development"></div>
+  <div class="wrap">
+    <div class="eyebrow rv">Плоская кровля · Казань и Татарстан</div>
+    <h1 class="rv d1">Плоская кровля без протечек и <em>переделок</em></h1>
+    <p class="rv d2">Монтируем мембранные, наплавляемые и эксплуатируемые кровли по бетону, профлисту и дереву. Частные дома, коммерческие здания и объекты застройщиков.</p>
+    <div class="hero-btns rv d3">
+      <a href="tel:+78432126040" class="btn btn-light">Позвонить</a>
+      <a href="https://wa.me/79393726007" class="btn btn-ghost" target="_blank" rel="noopener">Рассчитать в WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<section class="facts">
+  <div class="wrap">
+    <div class="fact rv"><b>300+</b><span>кровель смонтировали за 2022–2025 годы</span></div>
+    <div class="fact rv d1"><b>5 лет</b><span>гарантия на работу по договору</span></div>
+    <div class="fact rv d2"><b>16 дней</b><span>в среднем от заявки до готовой кровли</span></div>
+  </div>
+</section>
+
+<section class="manifest">
+  <div class="wrap">
+    <p class="rv">Перед сдачей проверяем каждую кровлю дефектоскопом, поэтому вы принимаете <em>герметичную</em> крышу, а не обещание.</p>
+  </div>
+</section>
+
+<section class="about">
+  <div class="wrap">
+    <p class="rv">Roof Development с 2011 года занимается только плоскими кровлями. Работаем в Казани, Набережных Челнах, Нижнекамске, Йошкар-Оле и Ижевске. Монтажники в штате, первыми в Татарстане получили сертификаты ТехноНиколь GOLD.</p>
+    <div class="rv d1">
+      <div class="eyebrow" style="margin-bottom:14px">Основание</div>
+      <div class="bases">
+        <span>Железобетон</span><span>Профлист</span><span>Дерево, OSB, фанера</span>
+      </div>
+      <div class="eyebrow" style="margin:24px 0 14px">Объекты</div>
+      <div class="bases">
+        <span>Частные дома</span><span>Многоквартирные дома</span><span>Административные здания</span><span>Тендеры</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow rv">Услуги и цены</div>
+        <h2 class="rv d1" style="margin-top:16px">Что мы монтируем</h2>
+      </div>
+      <p class="rv d2">Расчёт делаем в нескольких вариантах кровельного пирога, чтобы вы сравнили цену и срок службы до подписания договора.</p>
+    </div>
+
+    <div class="svc rv">
+      <div class="svc-num">01</div>
+      <h3>Мембранная кровля</h3>
+      <p>Балластная система, ПВХ мембрана по стяжке или по клиновидной теплоизоляции. Монтаж в любое время года.</p>
+      <div class="svc-price">от 550 ₽/м²</div>
+    </div>
+    <div class="svc rv">
+      <div class="svc-num">02</div>
+      <h3>Наплавляемая кровля</h3>
+      <p>Два слоя битумно-полимерной гидроизоляции по цементно-песчаной стяжке или по плитам Ц-XPS.</p>
+      <div class="svc-price">от 450 ₽/м²</div>
+    </div>
+    <div class="svc rv">
+      <div class="svc-num">03</div>
+      <h3>Эксплуатируемая кровля</h3>
+      <p>Крыша-терраса с покрытием из доски ДПК, тротуарной плитки или с озеленением.</p>
+      <div class="svc-price">от 1 500 ₽/м²</div>
+    </div>
+    <div class="svc rv">
+      <div class="svc-num">04</div>
+      <h3>Диагностика и ремонт</h3>
+      <p>Находим место протечки и ремонтируем мембранную или наплавляемую кровлю площадью от 100 м².</p>
+      <div class="svc-price">от 400 ₽/м²</div>
+    </div>
+    <div class="svc rv">
+      <div class="svc-num">05</div>
+      <h3>Контроль протечек</h3>
+      <p>Электропроводящий слой под гидроизоляцией. По нему находят даже мелкое повреждение и быстро его устраняют.</p>
+      <div class="svc-price">по расчёту</div>
+    </div>
+    <div class="svc rv">
+      <div class="svc-num">06</div>
+      <h3>Воронки и комплектация</h3>
+      <p>Воронки TOPWET с приваренным фартуком, ПВХ мембрана Sika, ЭПДМ мембрана РАББЕРФЛЕКС, аэраторы и парапетные крышки.</p>
+      <div class="svc-price">по расчёту</div>
+    </div>
+    <p class="svc-note rv">Цены за работу, ориентировочные. Около 70% стоимости кровли приходится на материал, точную смету даём после бесплатного замера.</p>
+  </div>
+</section>
+
+<section class="works" id="works">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow rv">Объекты</div>
+        <h2 class="rv d1" style="margin-top:16px">Кровли, которые мы сдали</h2>
+      </div>
+      <p class="rv d2">Базы отдыха, частные дома, коммерческие здания. Самая большая кровля на частном доме у нас 1037 м² в посёлке Алтан.</p>
+    </div>
+    <div class="gallery">
+      <figure class="ph rv"><img src="img/2.jpg" alt="Балластная система с ПВХ мембраной" loading="lazy"><figcaption>Балластная система с ПВХ мембраной</figcaption></figure>
+      <figure class="ph rv d1"><img src="img/3.png" alt="Мембрана по клиновидной теплоизоляции" loading="lazy"><figcaption>Мембрана по клиновидной теплоизоляции</figcaption></figure>
+      <figure class="ph rv d2"><img src="img/4.png" alt="Наплавляемая кровля в два слоя" loading="lazy"><figcaption>Наплавляемая кровля в два слоя</figcaption></figure>
+      <figure class="ph rv"><img src="img/5.png" alt="Стяжка перед укладкой гидроизоляции" loading="lazy"><figcaption>Стяжка перед гидроизоляцией</figcaption></figure>
+      <figure class="ph rv d1"><img src="img/6.webp" alt="Сварка швов ПВХ мембраны" loading="lazy"><figcaption>Сварка швов ПВХ мембраны</figcaption></figure>
+      <figure class="ph rv d2"><img src="img/7.webp" alt="Укладка экструзионного утеплителя" loading="lazy"><figcaption>Укладка экструзионного утеплителя</figcaption></figure>
+      <figure class="ph rv"><img src="img/8.png" alt="Примыкание к парапету" loading="lazy"><figcaption>Примыкание к парапету</figcaption></figure>
+      <figure class="ph rv d1"><img src="img/9.png" alt="Водосборная воронка" loading="lazy"><figcaption>Водосборная воронка в сборе</figcaption></figure>
+      <figure class="ph rv"><img src="img/10.png" alt="Плоская кровля частного дома" loading="lazy"><figcaption>Плоская кровля частного дома</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="adv">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow rv">Почему мы</div>
+      <h2 class="rv d1" style="margin-top:16px">Что вы получаете</h2>
+    </div>
+    <div class="adv-list">
+      <div class="adv-item rv"><small>01</small><h3>Смета в день обращения</h3><p>До пяти вариантов кровельного пирога с ценой на каждый. Смету другой компании проверим бесплатно.</p></div>
+      <div class="adv-item rv d1"><small>02</small><h3>Старт без предоплаты</h3><p>Можно начать без предоплаты или оформить рассрочку. Всё фиксируем в договоре, без скрытых платежей.</p></div>
+      <div class="adv-item rv"><small>03</small><h3>Отчёт каждый день</h3><p>Фото и видео с объекта в мессенджере и общий чат с прорабом. По желанию ставим камеру на объект.</p></div>
+      <div class="adv-item rv d1"><small>04</small><h3>Проверка перед сдачей</h3><p>Гидроизоляцию проверяем дефектоскопом ИЗОТЕСТ 2.0, швы мембраны варим автоматами Leister.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="process" id="process">
+  <div class="wrap">
+    <div class="eyebrow rv">Порядок работы</div>
+    <h2 class="rv d1" style="margin-top:16px">Как идёт работа</h2>
+    <ol class="steps-list">
+      <li class="rv"><b>Замер и смета</b><span>Замерщик приезжает бесплатно, смета готова за 1–3 дня</span></li>
+      <li class="rv d1"><b>Проект и договор</b><span>Согласуем систему кровли и подписываем договор за 3–5 дней</span></li>
+      <li class="rv d2"><b>Материалы</b><span>Закупаем и привозим на объект за 5–6 дней</span></li>
+      <li class="rv d3"><b>Монтаж и приёмка</b><span>Монтаж 6–16 дней, приёмка с проверкой на протечки</span></li>
+    </ol>
+    <p class="steps-total rv">В среднем кровля готова за 16 дней.</p>
+  </div>
+</section>
+
+<section class="faq" id="faq">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow rv">Вопросы</div>
+      <h2 class="rv d1" style="margin-top:16px">Спрашивают чаще всего</h2>
+    </div>
+    <div class="faq-list">
+      <details class="rv"><summary>С какой площади вы берёте объекты</summary><p>Монтаж от 50 м², ремонт от 100 м². Работаем и с частными домами, и с большими коммерческими объектами.</p></details>
+      <details class="rv"><summary>Где можно сэкономить</summary><p>Около 70% стоимости приходится на материал и 30% на работу. Сэкономить можно только на материале, но если кровля нужна надолго, мы этого не советуем.</p></details>
+      <details class="rv"><summary>Можно ли монтировать зимой</summary><p>Зависит от системы. Кровлю со стяжкой зимой не делаем, мембрану по клиновидной теплоизоляции монтируем в любое время года.</p></details>
+      <details class="rv"><summary>У меня уже есть смета от другой компании</summary><p>Пришлите её. Бесплатно проверим и покажем, где могут быть подводные камни.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="contacts" id="contacts">
+  <div class="wrap">
+    <div class="top">
+      <div>
+        <div class="eyebrow rv">Контакты</div>
+        <h2 class="rv d1">Обсудим вашу кровлю</h2>
+        <p class="lead rv d2">Пришлите площадь или план крыши, посчитаем стоимость в нескольких вариантах. Если площади нет, приедет замерщик, это бесплатно.</p>
+      </div>
+      <div class="c-btns rv d2">
+        <a href="tel:+78432126040" class="btn btn-light">Позвонить</a>
+        <a href="https://wa.me/79393726007" class="btn btn-ghost" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="https://t.me/roofdevelopmentkazan" class="btn btn-ghost" target="_blank" rel="noopener">Telegram</a>
+      </div>
+    </div>
+    <div class="c-grid">
+      <div class="rv">
+        <h4>Телефоны</h4>
+        <a href="tel:+78432126040">+7 (843) 212-60-40</a>
+        <a href="tel:+78432104574">+7 (843) 210-45-74</a>
+        <a href="tel:+79145381183">+7 (914) 538-11-83</a>
+      </div>
+      <div class="rv d1">
+        <h4>Офис</h4>
+        <p>Казань, проспект Альберта Камалеева, 1</p>
+        <p style="color:rgba(255,255,255,.6);font-size:15px">Пн–Пт, 8:00–18:00</p>
+      </div>
+      <div class="rv d2">
+        <h4>Соцсети</h4>
+        <a href="https://vk.com/roofdevelopmentkzn" target="_blank" rel="noopener">ВКонтакте</a>
+        <a href="https://t.me/roofdevelopmentkazan" target="_blank" rel="noopener">Telegram</a>
+        <a href="https://wa.me/79393726007" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+    <footer>
+      <span>© Roof Development, Казань</span>
+      <span>Демо-версия сайта</span>
+    </footer>
+  </div>
+</section>
+
+<script>
+(function(){
+  var h=document.getElementById('hdr');
+  function onScroll(){h.classList.toggle('scrolled',window.scrollY>40)}
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+  var els=document.querySelectorAll('.rv');
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return}
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})
+  },{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+  els.forEach(function(e){io.observe(e)});
+})();
+</script>
+</body>
+</html>
