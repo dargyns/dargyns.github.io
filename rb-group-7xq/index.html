@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RB Group — ремонт и дизайн интерьеров в Казани</title>
+<meta name="description" content="Ремонт полного цикла по дизайн-проекту, приёмка квартир, технический надзор, дизайн и комплектация. Казань, ул. Вишневского, 26Б к1.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f2eee7;
+  --bg2:#e9e3d9;
+  --ink:#1c1b18;
+  --muted:#6f685e;
+  --line:rgba(28,27,24,.14);
+  --accent:#8b6a48;
+  --dark:#161513;
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'Manrope',system-ui,-apple-system,sans-serif;
+  --pad:20px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-weight:400;font-size:16px;line-height:1.6;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1240px;margin:0 auto;padding:0 var(--pad)}
+.eyebrow{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:12px}
+.eyebrow::before{content:"";width:28px;height:1px;background:currentColor}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.02;letter-spacing:-.01em}
+h2{font-size:clamp(40px,9vw,88px);margin-top:18px}
+h2 em,h1 em{font-style:italic;color:var(--accent)}
+section{padding:96px 0}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:56px;padding:0 30px;border-radius:999px;font-size:15px;font-weight:500;letter-spacing:.01em;transition:background .3s,color .3s,border-color .3s,transform .3s}
+.btn-light{background:#f2eee7;color:var(--ink)}
+.btn-light:hover{background:#fff}
+.btn-ghost{border:1px solid rgba(255,255,255,.45);color:#fff}
+.btn-ghost:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+.btn-dark{background:var(--ink);color:var(--bg)}
+.btn-dark:hover{background:var(--accent)}
+.btn-line{border:1px solid var(--line);color:var(--ink)}
+.btn-line:hover{border-color:var(--ink)}
+.arrow{display:inline-block;transition:transform .3s}
+.btn:hover .arrow{transform:translateX(4px)}
+
+/* header */
+header{position:fixed;inset:0 0 auto 0;z-index:50;transition:background .4s,color .4s,border-color .4s;color:#fff;border-bottom:1px solid transparent}
+header.solid{background:rgba(242,238,231,.94);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);color:var(--ink);border-color:var(--line)}
+.hdr{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{font-family:var(--serif);font-size:26px;letter-spacing:.02em}
+.logo span{font-style:italic}
+nav{display:none;gap:34px;font-size:14px}
+nav a{opacity:.8;transition:opacity .2s}
+nav a:hover{opacity:1}
+.hdr-call{font-size:14px;font-weight:500;border:1px solid currentColor;border-radius:999px;padding:9px 16px;opacity:.95}
+
+/* hero */
+.hero{position:relative;min-height:100vh;min-height:100svh;display:flex;align-items:flex-end;color:#fff;padding:0 0 40px;overflow:hidden;background:var(--dark)}
+.hero-img{position:absolute;inset:0;background:url(img/1.webp) center/cover no-repeat;transform:scale(1.08);animation:heroZoom 2.4s cubic-bezier(.2,.7,.2,1) forwards}
+@keyframes heroZoom{to{transform:scale(1)}}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(16,15,13,.45) 0%,rgba(16,15,13,.05) 35%,rgba(16,15,13,.75) 100%)}
+.hero .wrap{position:relative;z-index:2;width:100%}
+.hero .eyebrow{color:rgba(255,255,255,.75)}
+.hero h1{font-size:clamp(50px,13.5vw,148px);margin:20px 0 22px;max-width:11ch}
+.hero p{max-width:440px;font-size:16px;color:rgba(255,255,255,.82);font-weight:300}
+.hero-btns{display:flex;flex-direction:column;gap:10px;margin-top:32px}
+.hero-meta{display:flex;justify-content:space-between;gap:16px;margin-top:44px;padding-top:18px;border-top:1px solid rgba(255,255,255,.22);font-size:12px;color:rgba(255,255,255,.7);letter-spacing:.04em}
+
+/* intro */
+.intro .lead{font-family:var(--serif);font-size:clamp(28px,6.4vw,54px);line-height:1.15;margin-top:26px;max-width:22ch}
+.facts{margin-top:56px;border-top:1px solid var(--line)}
+.facts li{list-style:none;display:flex;gap:20px;padding:20px 0;border-bottom:1px solid var(--line);font-size:16px}
+.facts li span{font-family:var(--serif);font-style:italic;color:var(--accent);font-size:20px;min-width:28px;line-height:1.3}
+
+/* services */
+.services{background:var(--dark);color:#ece6dc}
+.services .eyebrow{color:#9d958a}
+.svc-list{margin-top:56px;border-top:1px solid rgba(255,255,255,.14)}
+.svc{display:grid;grid-template-columns:1fr;gap:10px;padding:30px 0;border-bottom:1px solid rgba(255,255,255,.14);transition:padding .4s}
+.svc-num{font-size:12px;letter-spacing:.2em;color:#9d958a}
+.svc h3{font-size:clamp(30px,7vw,46px);color:#f4efe7}
+.svc p{color:#b8b0a5;font-size:15px;max-width:520px}
+.svc-price{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:#d2b48f;margin-top:4px}
+.svc-note{margin-top:34px;font-size:14px;color:#9d958a;max-width:560px}
+.svc-cta{margin-top:28px}
+
+/* gallery */
+.gallery{padding:0}
+.g-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.g-item{overflow:hidden;position:relative;background:var(--bg2)}
+.g-item img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
+.g-item:hover img{transform:scale(1.04)}
+.g-item.big{grid-column:1 / -1;aspect-ratio:4/3}
+.g-item.tall{aspect-ratio:3/4}
+.g-cap{padding:22px var(--pad) 0;display:flex;justify-content:space-between;align-items:baseline;gap:16px;font-size:13px;color:var(--muted)}
+.g-cap a{border-bottom:1px solid var(--line);padding-bottom:2px;color:var(--ink)}
+
+/* why */
+.why-grid{margin-top:56px;display:grid;gap:44px}
+.why-item h3{font-size:clamp(30px,6.5vw,40px);margin-bottom:14px}
+.why-item h3 i{font-size:.6em;color:var(--accent);margin-right:10px;vertical-align:.25em}
+.why-item p{color:var(--muted);max-width:480px}
+.app{margin-top:80px;background:var(--bg2);padding:40px 24px;border-radius:4px}
+.app h3{font-size:clamp(32px,7vw,52px)}
+.app ul{margin-top:26px;columns:1}
+.app li{list-style:none;padding:12px 0;border-bottom:1px solid var(--line);font-size:15px;break-inside:avoid}
+
+/* process */
+.process{background:var(--bg2)}
+.steps{margin-top:56px;counter-reset:s}
+.step{display:grid;grid-template-columns:52px 1fr;gap:4px 16px;padding:28px 0;border-top:1px solid var(--line)}
+.step:last-child{border-bottom:1px solid var(--line)}
+.step::before{counter-increment:s;content:counter(s,decimal-leading-zero);font-family:var(--serif);font-size:30px;color:var(--accent);line-height:1;grid-row:span 2}
+.step h3{font-size:24px;font-family:var(--sans);font-weight:500;letter-spacing:-.01em;line-height:1.3}
+.step p{color:var(--muted);font-size:15px}
+
+/* founders */
+.founders-grid{margin-top:56px;display:grid;gap:40px}
+.founder{border-top:1px solid var(--ink);padding-top:22px}
+.founder h3{font-size:34px}
+.founder .role{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin:8px 0 14px}
+.founder p{color:var(--muted);font-size:15px}
+
+/* excursion + form */
+.cta{background:var(--dark);color:#ece6dc}
+.cta .eyebrow{color:#9d958a}
+.cta-grid{display:grid;gap:56px}
+.cta p.sub{color:#b8b0a5;margin-top:22px;max-width:460px}
+.form{display:grid;gap:12px}
+.form label{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#9d958a}
+.form input,.form select{width:100%;height:58px;background:transparent;border:0;border-bottom:1px solid rgba(255,255,255,.25);color:#f4efe7;font:inherit;font-size:18px;padding:0 2px;outline:none;border-radius:0;-webkit-appearance:none;appearance:none;transition:border-color .3s}
+.form select option{color:#000}
+.form input:focus,.form select:focus{border-color:#d2b48f}
+.form .btn{margin-top:18px;width:100%}
+.form small{font-size:12px;color:#7d766c;line-height:1.5}
+.excursion{margin-top:56px;padding-top:28px;border-top:1px solid rgba(255,255,255,.14)}
+.excursion h3{font-size:clamp(28px,6vw,40px);color:#f4efe7}
+.excursion p{color:#b8b0a5;margin:12px 0 22px;max-width:460px}
+
+/* faq */
+.faq-list{margin-top:48px;border-top:1px solid var(--line)}
+.faq-item{border-bottom:1px solid var(--line)}
+.faq-q{width:100%;background:none;border:0;text-align:left;font:inherit;color:var(--ink);font-family:var(--serif);font-size:clamp(22px,5.4vw,30px);line-height:1.25;padding:24px 44px 24px 0;position:relative;cursor:pointer}
+.faq-q::after{content:"";position:absolute;right:6px;top:50%;width:16px;height:16px;margin-top:-8px;background:linear-gradient(var(--ink),var(--ink)) center/16px 1px no-repeat,linear-gradient(var(--ink),var(--ink)) center/1px 16px no-repeat;transition:transform .35s}
+.faq-item.open .faq-q::after{transform:rotate(45deg)}
+.faq-a{display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s ease}
+.faq-a > div{overflow:hidden}
+.faq-a p{color:var(--muted);padding:0 0 26px;max-width:640px}
+.faq-item.open .faq-a{grid-template-rows:1fr}
+
+/* contacts */
+.contacts{padding-bottom:120px}
+.c-grid{margin-top:48px;display:grid;gap:36px}
+.c-block .k{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.c-block .v{font-family:var(--serif);font-size:clamp(26px,6vw,38px);line-height:1.2}
+.c-block .v a{border-bottom:1px solid var(--line)}
+.c-btns{display:grid;gap:10px;margin-top:44px}
+.socials{display:flex;gap:22px;margin-top:30px;font-size:14px}
+.socials a{border-bottom:1px solid var(--line);padding-bottom:2px}
+
+footer{border-top:1px solid var(--line);padding:26px 0 100px;font-size:12px;color:var(--muted)}
+footer .wrap{display:flex;flex-direction:column;gap:6px}
+
+/* mobile bar */
+.mbar{position:fixed;left:12px;right:12px;bottom:12px;z-index:60;display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:6px;background:rgba(22,21,19,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);padding:6px;border-radius:999px;transform:translateY(120%);transition:transform .45s cubic-bezier(.2,.7,.2,1)}
+.mbar.show{transform:none}
+.mbar a{height:46px;display:flex;align-items:center;justify-content:center;border-radius:999px;color:#ece6dc;font-size:13px;font-weight:500}
+.mbar a:first-child{background:#f2eee7;color:var(--ink)}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(34px);transition:opacity 1s cubic-bezier(.2,.7,.2,1),transform 1s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
+
+@media (prefers-reduced-motion:reduce){
+  .rv{opacity:1;transform:none;transition:none}
+  .hero-img{animation:none;transform:none}
+}
+
+/* desktop */
+@media (min-width:900px){
+  :root{--pad:48px}
+  section{padding:150px 0}
+  nav{display:flex}
+  .hdr{height:84px}
+  .hero{padding-bottom:56px}
+  .hero-btns{flex-direction:row}
+  .hero p{font-size:18px}
+  .intro .wrap{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+  .facts{margin-top:0}
+  .svc{grid-template-columns:80px 1.2fr 1.4fr 220px;align-items:baseline;gap:30px;padding:40px 0}
+  .svc:hover{padding-left:14px}
+  .svc-price{text-align:right;margin:0}
+  .g-grid{grid-template-columns:repeat(3,1fr);gap:10px}
+  .g-item.big{grid-column:span 2;grid-row:span 2;aspect-ratio:auto}
+  .g-item.tall{aspect-ratio:4/5}
+  .why-grid{grid-template-columns:repeat(3,1fr);gap:56px}
+  .app{padding:72px;display:grid;grid-template-columns:1fr 1.2fr;gap:72px;align-items:start}
+  .app ul{margin-top:0}
+  .steps .step{grid-template-columns:120px 1fr 1.2fr;gap:40px;padding:36px 0;align-items:baseline}
+  .step::before{grid-row:auto;font-size:40px}
+  .founders-grid{grid-template-columns:1fr 1fr;gap:72px}
+  .cta-grid{grid-template-columns:1.1fr 1fr;gap:110px;align-items:start}
+  .faq-wrap{display:grid;grid-template-columns:1fr 1.6fr;gap:80px}
+  .faq-list{margin-top:0}
+  .c-grid{grid-template-columns:repeat(3,1fr)}
+  .c-btns{grid-template-columns:repeat(3,max-content);gap:12px}
+  .mbar{display:none}
+  footer{padding-bottom:26px}
+  footer .wrap{flex-direction:row;justify-content:space-between}
+}
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <div class="wrap hdr">
+    <a href="#top" class="logo">RB <span>Group</span></a>
+    <nav>
+      <a href="#services">Услуги</a>
+      <a href="#works">Объекты</a>
+      <a href="#why">Сервис</a>
+      <a href="#process">Этапы</a>
+      <a href="#faq">Вопросы</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+    <a href="tel:+79063250099" class="hdr-call">+7 906 325-00-99</a>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="hero-img" role="img" aria-label="Интерьер, выполненный RB Group"></div>
+  <div class="wrap">
+    <div class="eyebrow rv">Ремонт и дизайн интерьеров · Казань</div>
+    <h1 class="rv d1">Ремонт <em>по проекту</em> и&nbsp;по договору</h1>
+    <p class="rv d2">Квартиры и дома под ключ. Фиксированная цена, еженедельные фотоотчёты и контроль каждого этапа в приложении.</p>
+    <div class="hero-btns rv d3">
+      <a href="#request" class="btn btn-light">Записаться на замер <span class="arrow">→</span></a>
+      <a href="tel:+79063250099" class="btn btn-ghost">Позвонить</a>
+    </div>
+    <div class="hero-meta rv d3">
+      <span>ул. Вишневского, 26Б к1</span>
+      <span>Работаем по договору</span>
+    </div>
+  </div>
+</section>
+
+<section class="intro">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow rv">О компании</div>
+      <p class="lead rv d1">Создаём интерьеры и ведём ремонт любого масштаба — от дизайн-проекта до генеральной уборки и передачи ключей.</p>
+    </div>
+    <ul class="facts">
+      <li class="rv"><span>i</span>Работаем по договору</li>
+      <li class="rv d1"><span>ii</span>Все объекты ведём в приложении 101</li>
+      <li class="rv d2"><span>iii</span>Ставим бесключевой доступ на объект</li>
+      <li class="rv d3"><span>iv</span>Работаем только с проверенными мастерами</li>
+      <li class="rv d3"><span>v</span>На объектах чисто и порядок</li>
+    </ul>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="eyebrow rv">Услуги</div>
+    <h2 class="rv d1">Что мы <em>делаем</em></h2>
+
+    <div class="svc-list">
+      <div class="svc rv">
+        <div class="svc-num">01</div>
+        <h3>Ремонт полного цикла</h3>
+        <p>Весь комплекс работ внутри квартир и домов по дизайн-проекту — черновые и финишные работы.</p>
+        <div class="svc-price">Расчёт бесплатно</div>
+      </div>
+      <div class="svc rv">
+        <div class="svc-num">02</div>
+        <h3>Дизайн и проектирование</h3>
+        <p>Полноценный технический дизайн-проект с визуализацией.</p>
+        <div class="svc-price">По расчёту</div>
+      </div>
+      <div class="svc rv">
+        <div class="svc-num">03</div>
+        <h3>Приёмка помещений</h3>
+        <p>Принимаем квартиры и дома. Проверяем соответствие нормативам и теплопотери.</p>
+        <div class="svc-price">По расчёту</div>
+      </div>
+      <div class="svc rv">
+        <div class="svc-num">04</div>
+        <h3>Технический надзор</h3>
+        <p>Следим за работами на вашем объекте и поправляем бригаду, чтобы всё строилось правильно.</p>
+        <div class="svc-price">По расчёту</div>
+      </div>
+      <div class="svc rv">
+        <div class="svc-num">05</div>
+        <h3>Комплектация объекта</h3>
+        <p>Закупаем черновые и чистовые материалы и организуем доставку.</p>
+        <div class="svc-price">По расчёту</div>
+      </div>
+    </div>
+
+    <p class="svc-note rv">Стоимость зависит от площади, состояния объекта и объёма работ. Специалист бесплатно сделает предварительный расчёт и позвонит только по делу.</p>
+    <div class="svc-cta rv"><a href="#request" class="btn btn-light">Заказать расчёт <span class="arrow">→</span></a></div>
+  </div>
+</section>
+
+<section class="gallery" id="works">
+  <div class="g-grid">
+    <div class="g-item big rv"><img src="img/2.webp" alt="Объект RB Group" loading="lazy"></div>
+    <div class="g-item tall rv d1"><img src="img/3.webp" alt="Объект RB Group" loading="lazy"></div>
+    <div class="g-item tall rv d2"><img src="img/4.webp" alt="Объект RB Group" loading="lazy"></div>
+    <div class="g-item tall rv"><img src="img/5.webp" alt="Объект RB Group" loading="lazy"></div>
+    <div class="g-item tall rv d1"><img src="img/6.webp" alt="Объект RB Group" loading="lazy"></div>
+  </div>
+  <div class="g-cap wrap">
+    <span>Наши объекты в Казани</span>
+    <a href="https://instagram.com/rbgroup116" target="_blank" rel="noopener">Больше в Instagram →</a>
+  </div>
+</section>
+
+<section id="why">
+  <div class="wrap">
+    <div class="eyebrow rv">Почему мы</div>
+    <h2 class="rv d1">Ремонт, за которым <em>не нужно ездить</em></h2>
+
+    <div class="why-grid">
+      <div class="why-item rv">
+        <h3><i>01</i>Фотоотчёты</h3>
+        <p>Фотографии с объекта добавляются каждый день. Вы видите, на месте ли мастера и как идут работы, не приезжая в квартиру.</p>
+      </div>
+      <div class="why-item rv d1">
+        <h3><i>02</i>Контроль качества</h3>
+        <p>Работы проверяет отдельный технический специалист вместе с руководителем проектов. Руководитель получает деньги только с вашего согласия после приёмки.</p>
+      </div>
+      <div class="why-item rv d2">
+        <h3><i>03</i>Бесключевой доступ</h3>
+        <p>Ставим на объект электронный замок. Ключи не нужны — достаточно кода. Вместе с камерой объект под защитой.</p>
+      </div>
+    </div>
+
+    <div class="app rv">
+      <div>
+        <div class="eyebrow">Приложение 101</div>
+        <h3 style="margin-top:16px">Весь ремонт в одном <em style="color:var(--accent)">приложении</em></h3>
+      </div>
+      <ul>
+        <li>Контроль расходов</li>
+        <li>Электронный документооборот по проекту</li>
+        <li>Фото и видео на каждом этапе</li>
+        <li>Прозрачные цены по прайсу</li>
+        <li>Удалённая приёмка работ</li>
+        <li>Меньше времени на общение с подрядчиками</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="process" id="process">
+  <div class="wrap">
+    <div class="eyebrow rv">Как проходит работа</div>
+    <h2 class="rv d1">Пять <em>этапов</em></h2>
+    <div class="steps">
+      <div class="step rv"><h3>Замер</h3><p>Менеджер приезжает на объект, делает замеры и узнаёт, какой результат вы хотите.</p></div>
+      <div class="step rv"><h3>Предварительный расчёт</h3><p>Считаем стоимость полного ремонта по вашему объекту.</p></div>
+      <div class="step rv"><h3>Договор</h3><p>Подписываем документы. Вы вносите средства на материалы и первые работы.</p></div>
+      <div class="step rv"><h3>Ремонт</h3><p>Согласовываем работы с вашим или нашим дизайнером, проводим черновые и финишные работы.</p></div>
+      <div class="step rv"><h3>Уборка и сдача</h3><p>Делаем генеральную уборку, передаём ключи и даём гарантию на ремонт.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow rv">Основатели</div>
+    <h2 class="rv d1">Кто <em>отвечает</em> за объект</h2>
+    <div class="founders-grid">
+      <div class="founder rv">
+        <h3>Родион Поляков</h3>
+        <div class="role">Маркетинг и развитие</div>
+        <p>Руководит работами на ключевых объектах. Потомственный строитель с большим опытом в строительстве и инженерных коммуникациях.</p>
+      </div>
+      <div class="founder rv d1">
+        <h3>Булат Насртдинов</h3>
+        <div class="role">Производство и технический контроль</div>
+        <p>Следит за сроками и расходом материалов. Внимание к технической части работ — его зона ответственности.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="request">
+  <div class="wrap cta-grid">
+    <div>
+      <div class="eyebrow rv">Сколько стоит мой ремонт</div>
+      <h2 class="rv d1">Бесплатный <em>расчёт</em></h2>
+      <p class="sub rv d2">Оставьте телефон — специалист свяжется, уточнит детали и сделает предварительный расчёт. Без рекламы и навязывания.</p>
+
+      <div class="excursion rv">
+        <h3>Посмотрите объект вживую</h3>
+        <p>Запишитесь на бесплатную экскурсию по любому нашему объекту — увидите работу мастеров и то, как ведётся объект.</p>
+        <a href="https://wa.me/79003270099?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%2C%20%D1%85%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D1%8C%D1%81%D1%8F%20%D0%BD%D0%B0%20%D1%8D%D0%BA%D1%81%D0%BA%D1%83%D1%80%D1%81%D0%B8%D1%8E%20%D0%BF%D0%BE%20%D0%BE%D0%B1%D1%8A%D0%B5%D0%BA%D1%82%D1%83" target="_blank" rel="noopener" class="btn btn-ghost">Записаться на экскурсию</a>
+      </div>
+    </div>
+
+    <form class="form rv d1" id="leadForm">
+      <label for="fName">Имя</label>
+      <input id="fName" type="text" autocomplete="name" placeholder="Как к вам обращаться">
+      <label for="fPhone" style="margin-top:14px">Телефон</label>
+      <input id="fPhone" type="tel" autocomplete="tel" placeholder="+7" required>
+      <label for="fSvc" style="margin-top:14px">Что нужно</label>
+      <select id="fSvc">
+        <option>Ремонт под ключ</option>
+        <option>Дизайн-проект</option>
+        <option>Приёмка квартиры</option>
+        <option>Технический надзор</option>
+        <option>Комплектация</option>
+      </select>
+      <button type="submit" class="btn btn-light">Заказать расчёт <span class="arrow">→</span></button>
+      <small>Заявка откроется в WhatsApp. Нажимая кнопку, вы соглашаетесь на обработку персональных данных.</small>
+    </form>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap faq-wrap">
+    <div>
+      <div class="eyebrow rv">Вопросы</div>
+      <h2 class="rv d1">Частые <em>вопросы</em></h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item rv">
+        <button class="faq-q">Какой порядок оплаты</button>
+        <div class="faq-a"><div><p>После подписания договора вы вносите средства на закупку материалов и первые работы. Руководитель проекта получает оплату только после того, как вы примете работы.</p></div></div>
+      </div>
+      <div class="faq-item rv">
+        <button class="faq-q">Какая цена на ремонт</button>
+        <div class="faq-a"><div><p>Зависит от площади, состояния помещения и объёма работ. Предварительный расчёт делаем бесплатно после замера, ценообразование прозрачное — по прайсу.</p></div></div>
+      </div>
+      <div class="faq-item rv">
+        <button class="faq-q">Есть ли гарантия на ремонт</button>
+        <div class="faq-a"><div><p>Да. После уборки и передачи ключей даём гарантию на выполненный ремонт.</p></div></div>
+      </div>
+      <div class="faq-item rv">
+        <button class="faq-q">У меня нет дизайн-проекта. Возьмётесь</button>
+        <div class="faq-a"><div><p>Да. Наши дизайнеры разработают технический дизайн-проект с визуализацией. Если проект у вас уже есть, работаем с вашим дизайнером.</p></div></div>
+      </div>
+      <div class="faq-item rv">
+        <button class="faq-q">Могу ли я заказать ремонт из другого города</button>
+        <div class="faq-a"><div><p>Ход работ виден в приложении 101 — фото и видео на каждом этапе, документы и удалённая приёмка. На объект ставим электронный замок, ключи передавать не нужно.</p></div></div>
+      </div>
+      <div class="faq-item rv">
+        <button class="faq-q">Можно ремонт отдельных помещений</button>
+        <div class="faq-a"><div><p>Расскажите, что нужно сделать, — менеджер уточнит объём и сделает расчёт под ваш объект.</p></div></div>
+      </div>
+      <div class="faq-item rv">
+        <button class="faq-q">Можно я куплю материал сам</button>
+        <div class="faq-a"><div><p>Обсудим на замере. Мы также можем полностью укомплектовать объект черновыми и чистовыми материалами и организовать доставку.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contacts" id="contacts">
+  <div class="wrap">
+    <div class="eyebrow rv">Контакты</div>
+    <h2 class="rv d1">Приезжайте <em>в офис</em></h2>
+
+    <div class="c-grid">
+      <div class="c-block rv">
+        <div class="k">Адрес</div>
+        <div class="v">Казань, ул. Вишневского, 26Б к1, офис 3.11</div>
+      </div>
+      <div class="c-block rv d1">
+        <div class="k">Телефон</div>
+        <div class="v"><a href="tel:+79063250099">+7 906 325-00-99</a></div>
+      </div>
+      <div class="c-block rv d2">
+        <div class="k">Почта</div>
+        <div class="v"><a href="mailto:rbgroup116@mail.ru">rbgroup116@mail.ru</a></div>
+      </div>
+    </div>
+
+    <div class="c-btns rv">
+      <a href="tel:+79063250099" class="btn btn-dark">Позвонить</a>
+      <a href="https://wa.me/79003270099" target="_blank" rel="noopener" class="btn btn-line">WhatsApp</a>
+      <a href="https://t.me/RBgroup_Bulat" target="_blank" rel="noopener" class="btn btn-line">Telegram</a>
+    </div>
+
+    <div class="socials rv">
+      <a href="https://instagram.com/rbgroup116" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://yandex.ru/maps/?text=%D0%9A%D0%B0%D0%B7%D0%B0%D0%BD%D1%8C%2C%20%D1%83%D0%BB%D0%B8%D1%86%D0%B0%20%D0%92%D0%B8%D1%88%D0%BD%D0%B5%D0%B2%D1%81%D0%BA%D0%BE%D0%B3%D0%BE%2C%2026%D0%91%D0%BA1" target="_blank" rel="noopener">Открыть на карте</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© RB Group, Казань</span>
+    <span>Демо-версия сайта</span>
+  </div>
+</footer>
+
+<div class="mbar" id="mbar">
+  <a href="tel:+79063250099">Позвонить</a>
+  <a href="https://wa.me/79003270099" target="_blank" rel="noopener">WhatsApp</a>
+  <a href="https://t.me/RBgroup_Bulat" target="_blank" rel="noopener">Telegram</a>
+</div>
+
+<script>
+(function(){
+  var hdr=document.getElementById('hdr'),bar=document.getElementById('mbar');
+  function onScroll(){
+    var y=window.scrollY,h=window.innerHeight;
+    hdr.classList.toggle('solid',y>h*0.85);
+    bar.classList.toggle('show',y>h*0.6);
+  }
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+  var els=document.querySelectorAll('.rv');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+    },{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+    els.forEach(function(el){io.observe(el)});
+  }else{els.forEach(function(el){el.classList.add('in')})}
+
+  document.querySelectorAll('.faq-q').forEach(function(b){
+    b.addEventListener('click',function(){b.parentElement.classList.toggle('open')});
+  });
+
+  document.getElementById('leadForm').addEventListener('submit',function(e){
+    e.preventDefault();
+    var n=document.getElementById('fName').value.trim(),
+        p=document.getElementById('fPhone').value.trim(),
+        s=document.getElementById('fSvc').value;
+    var t='Здравствуйте. Хочу бесплатный расчёт — '+s.toLowerCase()+'. '+(n?'Меня зовут '+n+'. ':'')+'Телефон '+p;
+    window.open('https://wa.me/79003270099?text='+encodeURIComponent(t),'_blank');
+  });
+})();
+</script>
+</body>
+</html>
