@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Руф Глобал Групп — кровельные работы в Казани</title>
+<meta name="description" content="Монтаж, ремонт и замена кровли в Казани. Металлочерепица, профнастил, фальц, мягкая и плоская кровля, водостоки. Замер и смета.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#141210;
+  --ink-2:#1d1a17;
+  --paper:#efe9df;
+  --paper-2:#e6dfd3;
+  --cream:#f4efe7;
+  --copper:#c0784a;
+  --copper-2:#d99a6c;
+  --muted:#8c8378;
+  --muted-d:#6b645b;
+  --line-d:rgba(244,239,231,.12);
+  --line-l:rgba(20,18,16,.14);
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'Manrope',system-ui,-apple-system,sans-serif;
+  --pad:20px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);background:var(--ink);color:var(--cream);font-size:16px;line-height:1.6;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.wrap{width:100%;max-width:1240px;margin:0 auto;padding:0 var(--pad)}
+
+/* header */
+.hdr{position:fixed;inset:0 0 auto 0;z-index:50;transition:background .4s,border-color .4s;border-bottom:1px solid transparent}
+.hdr.scrolled{background:rgba(20,18,16,.86);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-color:var(--line-d)}
+.hdr .wrap{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{font-family:var(--serif);font-size:22px;font-weight:600;letter-spacing:.01em;line-height:1}
+.logo span{display:block;font-family:var(--sans);font-size:9.5px;letter-spacing:.28em;text-transform:uppercase;color:var(--muted);font-weight:500;margin-top:5px}
+.nav{display:none;gap:34px;font-size:14px;color:rgba(244,239,231,.72)}
+.nav a:hover{color:var(--cream)}
+.hdr-call{font-size:14px;font-weight:600;padding:10px 16px;border:1px solid var(--line-d);border-radius:100px;transition:.3s}
+.hdr-call:hover{border-color:var(--copper);color:var(--copper-2)}
+
+/* hero */
+.hero{position:relative;min-height:100vh;min-height:100svh;display:flex;align-items:center;overflow:hidden;
+  background:
+   radial-gradient(70% 55% at 85% 20%,rgba(192,120,74,.28),transparent 70%),
+   radial-gradient(60% 50% at 0% 100%,rgba(90,70,55,.35),transparent 70%),
+   linear-gradient(180deg,#171411 0%,#100e0c 100%)}
+.hero::before{content:"";position:absolute;inset:0;opacity:.35;pointer-events:none;
+  background-image:repeating-linear-gradient(90deg,transparent 0 47px,rgba(244,239,231,.035) 47px 48px)}
+.roofs{position:absolute;left:0;right:0;bottom:0;height:46%;pointer-events:none}
+.roof{position:absolute;bottom:0}
+.roof.r1{left:-10%;width:75%;height:78%;clip-path:polygon(0 100%,50% 0,100% 100%);
+  background:repeating-linear-gradient(90deg,#211d19 0 22px,#1a1714 22px 24px);opacity:.9}
+.roof.r2{right:-14%;width:70%;height:100%;clip-path:polygon(0 100%,46% 0,100% 100%);
+  background:linear-gradient(160deg,rgba(192,120,74,.55),rgba(192,120,74,0) 60%),repeating-linear-gradient(90deg,#2a231d 0 28px,#1e1a16 28px 30px)}
+.roof.r3{left:30%;width:46%;height:52%;clip-path:polygon(0 100%,50% 0,100% 100%);
+  background:repeating-linear-gradient(90deg,#171411 0 18px,#13110f 18px 19px)}
+.roofs::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(16,14,12,0) 30%,#100e0c 100%)}
+.ridge{position:absolute;right:calc(-14% + 70% * .54);bottom:100%;width:1px;height:0}
+.hero-in{position:relative;z-index:2;padding-top:110px;padding-bottom:120px}
+.eyebrow{display:inline-flex;align-items:center;gap:12px;font-size:11.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--copper-2);font-weight:600}
+.eyebrow::before{content:"";width:28px;height:1px;background:var(--copper)}
+h1{font-family:var(--serif);font-weight:500;font-size:clamp(46px,12.5vw,118px);line-height:.96;letter-spacing:-.015em;margin:26px 0 26px;max-width:11ch}
+h1 em{font-style:italic;color:var(--copper-2)}
+.lead{max-width:520px;color:rgba(244,239,231,.72);font-size:16.5px}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:38px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:56px;padding:0 28px;border-radius:100px;font-weight:600;font-size:15.5px;transition:transform .3s,background .3s,border-color .3s,color .3s}
+.btn-p{background:var(--copper);color:#140f0b}
+.btn-p:hover{background:var(--copper-2);transform:translateY(-2px)}
+.btn-g{border:1px solid rgba(244,239,231,.25)}
+.btn-g:hover{border-color:var(--cream)}
+.btn svg{width:18px;height:18px;flex:none}
+.hero-meta{display:flex;gap:28px;margin-top:54px;font-size:13px;color:var(--muted)}
+.hero-meta b{display:block;color:var(--cream);font-weight:500;font-size:14px}
+
+/* ticker */
+.ticker{border-top:1px solid var(--line-d);border-bottom:1px solid var(--line-d);overflow:hidden;background:var(--ink)}
+.ticker-tr{display:flex;width:max-content;animation:tick 38s linear infinite}
+.ticker span{font-family:var(--serif);font-size:26px;font-style:italic;padding:18px 0;white-space:nowrap;color:rgba(244,239,231,.82)}
+.ticker span::after{content:"";display:inline-block;width:7px;height:7px;background:var(--copper);transform:rotate(45deg);margin:0 30px 4px}
+@keyframes tick{to{transform:translateX(-50%)}}
+
+/* sections */
+section{position:relative}
+.sec{padding:96px 0}
+.light{background:var(--paper);color:var(--ink)}
+.light .muted{color:var(--muted-d)}
+.label{font-size:11.5px;letter-spacing:.26em;text-transform:uppercase;font-weight:600;color:var(--copper)}
+h2{font-family:var(--serif);font-weight:500;font-size:clamp(38px,9vw,76px);line-height:1;letter-spacing:-.01em;margin:18px 0 22px}
+h2 em{font-style:italic;color:var(--copper)}
+.sec-head p{max-width:520px;font-size:16px}
+.muted{color:var(--muted)}
+
+/* services */
+.svc{margin-top:56px;border-top:1px solid var(--line-l)}
+.svc-row{display:grid;grid-template-columns:1fr auto;gap:6px 20px;padding:26px 0;border-bottom:1px solid var(--line-l);transition:padding .35s}
+.svc-row h3{font-family:var(--serif);font-size:27px;font-weight:600;line-height:1.1}
+.svc-row p{grid-column:1/-1;font-size:14.5px;color:var(--muted-d);max-width:560px}
+.svc-row .price{font-size:15px;font-weight:600;white-space:nowrap;align-self:start;padding-top:5px}
+.svc-row .price small{font-weight:400;color:var(--muted-d)}
+.svc-row .n{display:none}
+.svc-note{margin-top:26px;font-size:14px;color:var(--muted-d);max-width:560px}
+
+/* why */
+.why{display:grid;gap:0;margin-top:56px;border-top:1px solid var(--line-d)}
+.why-i{padding:32px 0;border-bottom:1px solid var(--line-d)}
+.why-i .k{font-family:var(--serif);font-style:italic;font-size:20px;color:var(--copper-2)}
+.why-i h3{font-family:var(--serif);font-weight:500;font-size:30px;line-height:1.1;margin:8px 0 12px}
+.why-i p{color:rgba(244,239,231,.68);font-size:15px;max-width:460px}
+
+/* process */
+.steps{margin-top:56px;counter-reset:s;position:relative}
+.step{position:relative;padding:0 0 44px 64px}
+.step::before{counter-increment:s;content:counter(s,decimal-leading-zero);position:absolute;left:0;top:0;font-family:var(--serif);font-size:30px;line-height:1;color:var(--copper)}
+.step::after{content:"";position:absolute;left:18px;top:44px;bottom:8px;width:1px;background:var(--line-l)}
+.step:last-child::after{display:none}
+.step h3{font-family:var(--serif);font-weight:600;font-size:26px;line-height:1.1;margin-bottom:8px}
+.step p{font-size:15px;color:var(--muted-d);max-width:480px}
+
+/* faq */
+.faq{margin-top:48px;border-top:1px solid var(--line-l)}
+.faq details{border-bottom:1px solid var(--line-l)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:24px 0;font-family:var(--serif);font-size:23px;font-weight:600;line-height:1.2}
+.faq summary::-webkit-details-marker{display:none}
+.faq .pm{position:relative;width:16px;height:16px;flex:none}
+.faq .pm::before,.faq .pm::after{content:"";position:absolute;left:0;top:7.5px;width:16px;height:1px;background:var(--ink);transition:transform .35s}
+.faq .pm::after{transform:rotate(90deg)}
+.faq details[open] .pm::after{transform:rotate(0)}
+.faq .ans{overflow:hidden;height:0;transition:height .4s ease}
+.faq .ans p{padding:0 0 26px;font-size:15px;color:var(--muted-d);max-width:640px}
+
+/* contacts */
+.contacts{background:
+  radial-gradient(60% 60% at 100% 0%,rgba(192,120,74,.22),transparent 70%),var(--ink)}
+.phones{margin-top:44px;display:grid;gap:4px}
+.phones a{font-family:var(--serif);font-size:clamp(34px,9.5vw,64px);line-height:1.15;font-weight:500;width:fit-content;transition:color .3s}
+.phones a:hover{color:var(--copper-2)}
+.c-grid{display:grid;gap:36px;margin-top:48px;padding-top:36px;border-top:1px solid var(--line-d)}
+.c-grid .t{font-size:11.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:10px}
+.c-grid .v{font-size:18px}
+.c-grid .v a{border-bottom:1px solid var(--line-d);transition:border-color .3s}
+.c-grid .v a:hover{border-color:var(--copper)}
+.c-btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:44px}
+.c-btns .btn{flex:1 1 150px}
+
+footer{background:#0d0b0a;color:var(--muted);font-size:13px;padding:30px 0 100px}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
+.demo{font-size:11.5px;opacity:.7}
+
+/* mobile bar */
+.mbar{position:fixed;left:12px;right:12px;bottom:12px;z-index:60;display:flex;gap:8px;padding:8px;border-radius:100px;background:rgba(20,18,16,.9);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid var(--line-d);transform:translateY(140%);transition:transform .45s ease}
+.mbar.show{transform:none}
+.mbar a{flex:1;height:48px;border-radius:100px;display:flex;align-items:center;justify-content:center;gap:8px;font-weight:600;font-size:14.5px}
+.mbar a:first-child{background:var(--copper);color:#140f0b}
+.mbar a:last-child{border:1px solid var(--line-d)}
+.mbar svg{width:17px;height:17px}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(34px);transition:opacity 1s cubic-bezier(.2,.7,.2,1),transform 1s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+.hero .rv{transition-duration:1.3s}
+.d1{transition-delay:.12s}.d2{transition-delay:.24s}.d3{transition-delay:.36s}.d4{transition-delay:.48s}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.ticker-tr{animation:none}}
+
+/* desktop */
+@media (min-width:768px){
+  :root{--pad:40px}
+  .nav{display:flex}
+  .sec{padding:140px 0}
+  .hero-in{padding-top:140px}
+  .lead{font-size:18px}
+  .sec-head{display:grid;grid-template-columns:1.1fr 1fr;gap:60px;align-items:end}
+  .sec-head h2{margin-bottom:0}
+  .svc-row{grid-template-columns:70px 1fr auto;padding:34px 0;align-items:baseline}
+  .svc-row .n{display:block;font-family:var(--serif);font-style:italic;font-size:20px;color:var(--copper)}
+  .svc-row h3{font-size:34px}
+  .svc-row p{grid-column:2/3;grid-row:2}
+  .svc-row .price{grid-column:3;grid-row:1/3;font-size:17px;align-self:center}
+  .svc-row:hover{padding-left:14px}
+  .why{grid-template-columns:1fr 1fr;column-gap:80px}
+  .steps{display:grid;grid-template-columns:repeat(5,1fr);gap:28px}
+  .step{padding:64px 0 0}
+  .step::after{left:56px;right:-14px;top:15px;bottom:auto;width:auto;height:1px}
+  .faq summary{font-size:28px;padding:30px 0}
+  .c-grid{grid-template-columns:repeat(3,1fr)}
+  .c-btns .btn{flex:0 0 auto}
+  .mbar{display:none}
+  footer{padding-bottom:30px}
+  .ticker span{font-size:32px}
+}
+@media (min-width:1100px){
+  .roofs{height:62%}
+  .roof.r1{left:-4%;width:52%}
+  .roof.r2{right:-6%;width:52%}
+  .roof.r3{left:38%;width:30%}
+  .hero-in{padding-bottom:180px}
+}
+</style>
+</head>
+<body>
+
+<header class="hdr" id="hdr">
+  <div class="wrap">
+    <a href="#top" class="logo">Руф Глобал<span>Кровля · Казань</span></a>
+    <nav class="nav">
+      <a href="#services">Услуги</a>
+      <a href="#why">Почему мы</a>
+      <a href="#process">Как работаем</a>
+      <a href="#faq">Вопросы</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+    <a href="tel:+79168799059" class="hdr-call">+7 916 879-90-59</a>
+  </div>
+</header>
+
+<main id="top">
+
+<section class="hero">
+  <div class="roofs" aria-hidden="true">
+    <div class="roof r1"></div>
+    <div class="roof r2"></div>
+    <div class="roof r3"></div>
+  </div>
+  <div class="wrap hero-in">
+    <div class="eyebrow rv">Кровельные работы в Казани</div>
+    <h1 class="rv d1">Крыша, которой не страшна <em>казанская зима</em></h1>
+    <p class="lead rv d2">Монтаж новой кровли, замена старой и ремонт протечек на частных домах, дачах и коммерческих зданиях. Приезжаем на замер и считаем смету до начала работ.</p>
+    <div class="cta rv d3">
+      <a href="tel:+79168799059" class="btn btn-p">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+        Позвонить
+      </a>
+      <a href="https://wa.me/79168799059?text=Здравствуйте,%20хочу%20записаться%20на%20замер%20кровли" class="btn btn-g" target="_blank" rel="noopener">Записаться на замер</a>
+    </div>
+    <div class="hero-meta rv d4">
+      <div><b>ул. Седова, 2в</b>Казань</div>
+      <div><b>WhatsApp и Telegram</b>ответим в мессенджере</div>
+    </div>
+  </div>
+</section>
+
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-tr">
+    <span>Металлочерепица</span><span>Профнастил</span><span>Фальцевая кровля</span><span>Мягкая черепица</span><span>Плоская кровля</span><span>Водостоки</span><span>Утепление</span>
+    <span>Металлочерепица</span><span>Профнастил</span><span>Фальцевая кровля</span><span>Мягкая черепица</span><span>Плоская кровля</span><span>Водостоки</span><span>Утепление</span>
+  </div>
+</div>
+
+<section class="sec light" id="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="label rv">Услуги и цены</div>
+        <h2 class="rv d1">Делаем кровлю <em>под ключ</em> или отдельный узел</h2>
+      </div>
+      <p class="muted rv d2">Цены указаны за работу. Материал считаем отдельно по замеру, можем закупить сами или работать с вашим.</p>
+    </div>
+
+    <div class="svc">
+      <div class="svc-row rv"><span class="n">01</span><h3>Металлочерепица</h3><span class="price">от 450 ₽ <small>/ м²</small></span><p>Монтаж на новую обрешётку с гидро- и ветрозащитой, коньки, ендовы, снегозадержатели.</p></div>
+      <div class="svc-row rv"><span class="n">02</span><h3>Профнастил</h3><span class="price">от 350 ₽ <small>/ м²</small></span><p>Для домов, гаражей, хозпостроек и складов. Подбираем высоту волны под уклон и нагрузку.</p></div>
+      <div class="svc-row rv"><span class="n">03</span><h3>Фальцевая кровля</h3><span class="price">от 900 ₽ <small>/ м²</small></span><p>Кликфальц и двойной стоячий фальц. Без сквозных саморезов, подходит для сложных форм.</p></div>
+      <div class="svc-row rv"><span class="n">04</span><h3>Мягкая черепица</h3><span class="price">от 550 ₽ <small>/ м²</small></span><p>Сплошное основание из ОСП, подкладочный ковёр, ендовный ковёр и вентиляция подкровельного пространства.</p></div>
+      <div class="svc-row rv"><span class="n">05</span><h3>Плоская кровля</h3><span class="price">от 400 ₽ <small>/ м²</small></span><p>Наплавляемые материалы и мембрана на гаражах, пристроях и коммерческих зданиях.</p></div>
+      <div class="svc-row rv"><span class="n">06</span><h3>Ремонт и протечки</h3><span class="price">от 300 ₽ <small>/ м²</small></span><p>Находим причину течи, перекрываем участки, переделываем примыкания к трубам и стенам.</p></div>
+      <div class="svc-row rv"><span class="n">07</span><h3>Водосточная система</h3><span class="price">от 700 ₽ <small>/ п. м</small></span><p>Металл и ПВХ. Желоба, воронки, трубы, обогрев водостока по запросу.</p></div>
+      <div class="svc-row rv"><span class="n">08</span><h3>Утепление и демонтаж</h3><span class="price">от 200 ₽ <small>/ м²</small></span><p>Снимаем старое покрытие, вывозим мусор, утепляем скаты и перекрытие мансарды.</p></div>
+    </div>
+    <p class="svc-note rv">Цены ориентировочные. Точная сумма зависит от площади, уклона, сложности крыши и выбранного материала и фиксируется в смете после замера.</p>
+  </div>
+</section>
+
+<section class="sec" id="why">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="label rv">Почему мы</div>
+        <h2 class="rv d1">Крыша течёт не от материала, а от <em>узлов</em></h2>
+      </div>
+      <p class="muted rv d2">Большинство протечек начинается в местах, которые не видно с земли. Поэтому их мы делаем внимательнее всего.</p>
+    </div>
+    <div class="why">
+      <div class="why-i rv"><div class="k">Смета до старта</div><h3>Считаем по замеру, а не на глаз</h3><p>Приезжаем, меряем скаты, смотрим стропила и старое покрытие. Вы заранее знаете, сколько стоит работа и сколько нужно материала.</p></div>
+      <div class="why-i rv d1"><div class="k">Примыкания</div><h3>Трубы, ендовы, мансардные окна</h3><p>Делаем по технологии производителя кровли, с правильными планками и герметиками. Именно здесь экономят чаще всего.</p></div>
+      <div class="why-i rv"><div class="k">Снег и наледь</div><h3>Учитываем местную зиму</h3><p>Подбираем шаг обрешётки под снеговую нагрузку, ставим снегозадержатели и продумываем вентиляцию, чтобы не было сосулек и конденсата.</p></div>
+      <div class="why-i rv d1"><div class="k">После нас</div><h3>Чистый участок и сданная работа</h3><p>Вывозим старое покрытие и обрезки, проходим крышу вместе с вами и показываем каждый узел.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec light" id="process">
+  <div class="wrap">
+    <div class="label rv">Как проходит работа</div>
+    <h2 class="rv d1">Пять шагов <em>от звонка</em> до готовой крыши</h2>
+    <div class="steps">
+      <div class="step rv"><h3>Звонок или сообщение</h3><p>Расскажите, что за объект и что нужно сделать. Можно сразу прислать фото крыши в WhatsApp.</p></div>
+      <div class="step rv d1"><h3>Замер на объекте</h3><p>Приезжаем в удобное время, осматриваем кровлю и стропильную систему.</p></div>
+      <div class="step rv d2"><h3>Смета и договор</h3><p>Фиксируем объём, материалы, сроки и стоимость работ.</p></div>
+      <div class="step rv d3"><h3>Монтаж</h3><p>Демонтаж, обрешётка, изоляция, покрытие, доборные элементы, водосток.</p></div>
+      <div class="step rv d4"><h3>Сдача</h3><p>Проверяем узлы вместе с вами, убираем мусор, передаём документы.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec light" id="faq" style="padding-top:0">
+  <div class="wrap">
+    <div class="label rv">Вопросы</div>
+    <h2 class="rv d1">Что обычно <em>спрашивают</em></h2>
+    <div class="faq">
+      <details class="rv"><summary>Можно ли делать кровлю осенью и зимой<span class="pm"></span></summary><div class="ans"><p>Металлические покрытия монтируются в холод без проблем. Мягкую кровлю и наплавляемые материалы лучше класть в тёплый сезон, но срочный ремонт протечки делаем в любое время года.</p></div></details>
+      <details class="rv"><summary>Сколько времени занимает монтаж<span class="pm"></span></summary><div class="ans"><p>Зависит от площади и сложности крыши. Точный срок называем после замера и прописываем в договоре.</p></div></details>
+      <details class="rv"><summary>Можно ли положить новую кровлю поверх старой<span class="pm"></span></summary><div class="ans"><p>Иногда да, но чаще нет. Под старым покрытием бывает гнилая обрешётка или мокрый утеплитель. Решаем на замере, когда видно состояние основания.</p></div></details>
+      <details class="rv"><summary>Вы сами закупаете материал<span class="pm"></span></summary><div class="ans"><p>Можем закупить и привезти на объект, можем работать с вашим. Во втором случае заранее даём точный список, чтобы не пришлось докупать в процессе.</p></div></details>
+      <details class="rv"><summary>Чем металлочерепица отличается от фальца<span class="pm"></span></summary><div class="ans"><p>Металлочерепица дешевле и быстрее в монтаже. Фальц крепится скрыто, без отверстий в листе, лучше держит сложные формы и дольше служит без обслуживания. Подскажем, что подойдёт для вашего дома.</p></div></details>
+      <details class="rv"><summary>Работаете ли вы с организациями<span class="pm"></span></summary><div class="ans"><p>Да, берём кровли складов, магазинов, производственных и офисных зданий. Работаем по договору.</p></div></details>
+    </div>
+  </div>
+</section>
+
+<section class="sec contacts" id="contacts">
+  <div class="wrap">
+    <div class="label rv">Контакты</div>
+    <h2 class="rv d1">Позвоните, и мы <em>договоримся</em> о замере</h2>
+    <div class="phones">
+      <a href="tel:+79168799059" class="rv">+7 916 879-90-59</a>
+      <a href="tel:+79145381183" class="rv d1">+7 914 538-11-83</a>
+      <a href="tel:+78432104574" class="rv d2">+7 843 210-45-74</a>
+    </div>
+    <div class="c-grid">
+      <div class="rv"><div class="t">Адрес</div><div class="v"><a href="https://yandex.ru/maps/?text=Казань,%20улица%20Седова,%202в" target="_blank" rel="noopener">Казань, ул. Седова, 2в</a></div></div>
+      <div class="rv d1"><div class="t">Мессенджеры</div><div class="v"><a href="https://wa.me/79168799059" target="_blank" rel="noopener">WhatsApp</a> · <a href="https://t.me/+79168799059" target="_blank" rel="noopener">Telegram</a></div></div>
+      <div class="rv d2"><div class="t">Компания</div><div class="v">ООО «Руф Глобал Групп»</div></div>
+    </div>
+    <div class="c-btns rv">
+      <a href="tel:+79168799059" class="btn btn-p">Позвонить</a>
+      <a href="https://wa.me/79168799059?text=Здравствуйте,%20хочу%20записаться%20на%20замер%20кровли" class="btn btn-g" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="https://t.me/+79168799059" class="btn btn-g" target="_blank" rel="noopener">Telegram</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Руф Глобал Групп · Кровельные работы в Казани</span>
+    <span class="demo">Демо-версия сайта</span>
+  </div>
+</footer>
+
+<div class="mbar" id="mbar">
+  <a href="tel:+79168799059"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>Позвонить</a>
+  <a href="https://wa.me/79168799059" target="_blank" rel="noopener">WhatsApp</a>
+</div>
+
+<script>
+(function(){
+  var hdr=document.getElementById('hdr'),bar=document.getElementById('mbar');
+  function onScroll(){
+    var y=window.scrollY;
+    hdr.classList.toggle('scrolled',y>40);
+    bar.classList.toggle('show',y>window.innerHeight*.7);
+  }
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+  var els=document.querySelectorAll('.rv');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(en){
+      en.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+    },{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+    els.forEach(function(el){io.observe(el)});
+  }else{els.forEach(function(el){el.classList.add('in')})}
+
+  document.querySelectorAll('.faq details').forEach(function(d){
+    var s=d.querySelector('summary'),a=d.querySelector('.ans');
+    s.addEventListener('click',function(ev){
+      ev.preventDefault();
+      if(d.open){
+        a.style.height=a.scrollHeight+'px';
+        requestAnimationFrame(function(){a.style.height='0px'});
+        a.addEventListener('transitionend',function h(){d.open=false;a.removeEventListener('transitionend',h)});
+      }else{
+        d.open=true;a.style.height='0px';
+        requestAnimationFrame(function(){a.style.height=a.scrollHeight+'px'});
+        a.addEventListener('transitionend',function h(){a.style.height='auto';a.removeEventListener('transitionend',h)});
+      }
+    });
+  });
+})();
+</script>
+</body>
+</html>
