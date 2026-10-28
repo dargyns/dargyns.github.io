@@ -1,0 +1,2327 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#f4f2ec">
+<meta name="description" content="Roof Development — монтаж и ремонт плоской кровли в Казани и Татарстане. Мембранные, наплавляемые и эксплуатируемые кровельные системы.">
+<title>Roof Development — плоская кровля под ключ</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@400;500;600&display=swap');
+
+:root {
+  --bg: #f4f2ec;
+  --paper: #ebe9e1;
+  --ink: #20251f;
+  --muted: #77796f;
+  --green: #3d6049;
+  --green-dark: #263e30;
+  --lime: #c6d7a4;
+  --line: rgba(32,37,31,.17);
+  --serif: "Playfair Display", Georgia, serif;
+  --sans: "DM Sans", sans-serif;
+  --display: "Manrope", sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 85px;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--sans);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+body, button, a { -webkit-tap-highlight-color: transparent; }
+
+a { color: inherit; text-decoration: none; }
+
+button, input, textarea { font: inherit; }
+
+button, a { touch-action: manipulation; }
+
+::selection { background: var(--lime); color: var(--ink); }
+
+.container {
+  width: min(1320px, calc(100% - 96px));
+  margin-inline: auto;
+}
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .17em;
+  text-transform: uppercase;
+}
+
+.eyebrow::before {
+  content: "";
+  display: block;
+  width: 24px;
+  height: 1px;
+  background: currentColor;
+}
+
+h1, h2, h3, p { margin-top: 0; }
+
+h1, h2, .serif {
+  font-family: var(--serif);
+  font-weight: 400;
+  letter-spacing: -.055em;
+}
+
+h2 {
+  font-size: clamp(39px, 5.5vw, 74px);
+  line-height: 1.04;
+  margin-bottom: 0;
+}
+
+.section {
+  padding: 120px 0;
+}
+
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 35px;
+  margin-bottom: 62px;
+}
+
+.section-head .eyebrow { margin-bottom: 22px; }
+
+.section-note {
+  max-width: 290px;
+  margin-bottom: 5px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.btn {
+  min-height: 54px;
+  padding: 0 23px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  border: 1px solid transparent;
+  background: var(--green);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  transition: background .25s, color .25s, border-color .25s;
+  cursor: pointer;
+}
+
+.btn:hover { background: var(--green-dark); }
+
+.btn-light {
+  background: var(--bg);
+  color: var(--ink);
+}
+
+.btn-light:hover {
+  background: var(--lime);
+  color: var(--ink);
+}
+
+.btn-outline {
+  background: transparent;
+  border-color: var(--line);
+  color: var(--ink);
+}
+
+.btn-outline:hover {
+  background: var(--ink);
+  color: var(--bg);
+}
+
+.arrow {
+  display: inline-block;
+  font-size: 17px;
+  font-weight: 400;
+  transition: transform .25s;
+}
+
+.btn:hover .arrow, a:hover .arrow { transform: translateX(4px); }
+
+/* Header */
+
+.header {
+  height: 84px;
+  position: absolute;
+  inset: 0 0 auto;
+  z-index: 20;
+  border-bottom: 1px solid rgba(255,255,255,.18);
+  color: #fff;
+}
+
+.header-inner {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.logo-mark {
+  position: relative;
+  width: 35px;
+  height: 35px;
+  border: 1px solid rgba(255,255,255,.6);
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.logo-mark::before {
+  content: "";
+  width: 18px;
+  height: 18px;
+  border-top: 2px solid var(--lime);
+  border-left: 2px solid var(--lime);
+  transform: rotate(45deg) translate(3px, 3px);
+}
+
+.logo-name {
+  font-family: var(--display);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .065em;
+  line-height: 1.35;
+}
+
+.logo-name small {
+  display: block;
+  font-family: var(--sans);
+  font-size: 8px;
+  font-weight: 500;
+  letter-spacing: .23em;
+  opacity: .7;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 29px;
+}
+
+.nav a {
+  font-size: 11px;
+  color: rgba(255,255,255,.77);
+  transition: color .2s;
+}
+
+.nav a:hover { color: var(--lime); }
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.header-phone {
+  text-align: right;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.header-phone small {
+  display: block;
+  margin-top: 5px;
+  color: rgba(255,255,255,.62);
+  font-size: 10px;
+  font-weight: 400;
+}
+
+.header-cta {
+  padding: 13px 17px;
+  background: var(--lime);
+  color: var(--ink);
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
+  transition: background .2s;
+}
+
+.header-cta:hover { background: #d9e5c3; }
+
+.menu-toggle {
+  display: none;
+  width: 42px;
+  height: 42px;
+  border: 1px solid rgba(255,255,255,.4);
+  background: transparent;
+  color: #fff;
+  font-size: 21px;
+}
+
+/* Hero */
+
+.hero {
+  min-height: 760px;
+  min-height: 100svh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: #293b30;
+  color: #fff;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 75% 33%, rgba(139,160,116,.30), transparent 35%),
+    radial-gradient(ellipse at 88% 83%, rgba(153,160,125,.19), transparent 34%),
+    linear-gradient(112deg, #24362b 0%, #354a39 48%, #52634b 100%);
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: .13;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.86' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.28'/%3E%3C/svg%3E");
+}
+
+.hero-grid {
+  position: absolute;
+  inset: 0 0 0 51%;
+  opacity: .13;
+  background-image:
+    linear-gradient(rgba(255,255,255,.25) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.25) 1px, transparent 1px);
+  background-size: 66px 66px;
+  mask-image: linear-gradient(90deg, transparent, #000 35%, #000);
+}
+
+.roof-art {
+  position: absolute;
+  width: min(66vw, 900px);
+  height: min(69vw, 750px);
+  right: -7%;
+  top: 13%;
+  pointer-events: none;
+  opacity: .9;
+}
+
+.roof-art .plane {
+  position: absolute;
+  border: 1px solid rgba(231,236,218,.37);
+  background: linear-gradient(140deg, rgba(207,218,185,.17), rgba(14,31,22,.08));
+  box-shadow: 0 35px 90px rgba(0,0,0,.12);
+  transform: skewY(-26deg) rotate(-1deg);
+}
+
+.roof-art .plane-one {
+  inset: 21% 0 18% 14%;
+  clip-path: polygon(0 23%, 67% 0, 100% 29%, 31% 100%);
+}
+
+.roof-art .plane-two {
+  inset: 0 15% 44% 34%;
+  clip-path: polygon(0 34%, 59% 0, 100% 35%, 38% 100%);
+  background: linear-gradient(135deg, rgba(228,232,209,.2), rgba(120,142,105,.05));
+}
+
+.roof-art .plane-three {
+  inset: 44% 17% 0 2%;
+  clip-path: polygon(0 15%, 69% 0, 100% 31%, 32% 100%);
+  background: linear-gradient(140deg, rgba(177,193,155,.15), rgba(18,34,25,.26));
+}
+
+.roof-art .line {
+  position: absolute;
+  height: 1px;
+  width: 84%;
+  left: 8%;
+  top: 51%;
+  background: rgba(231,236,218,.55);
+  transform: rotate(-26deg);
+}
+
+.roof-art .line-two {
+  top: 64%;
+  left: 15%;
+  width: 60%;
+  opacity: .5;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  padding-top: 98px;
+  padding-bottom: 95px;
+}
+
+.hero .eyebrow {
+  color: var(--lime);
+  margin-bottom: 34px;
+}
+
+.hero h1 {
+  max-width: 850px;
+  font-size: clamp(57px, 7.7vw, 108px);
+  line-height: .99;
+  margin: 0 0 31px;
+}
+
+.hero h1 em {
+  color: var(--lime);
+  font-weight: 400;
+}
+
+.hero-description {
+  max-width: 435px;
+  margin-bottom: 31px;
+  color: rgba(255,255,255,.76);
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.hero-meta {
+  position: absolute;
+  z-index: 3;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-top: 1px solid rgba(255,255,255,.2);
+}
+
+.hero-meta-inner {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.hero-stat {
+  padding: 23px 25px 24px 0;
+  border-right: 1px solid rgba(255,255,255,.2);
+}
+
+.hero-stat + .hero-stat { padding-left: 27px; }
+
+.hero-stat:last-child { border-right: 0; }
+
+.hero-stat strong {
+  display: block;
+  font-family: var(--display);
+  font-size: 26px;
+  font-weight: 500;
+  letter-spacing: -.05em;
+}
+
+.hero-stat span {
+  display: block;
+  margin-top: 5px;
+  color: rgba(255,255,255,.66);
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+/* Introduction */
+
+.intro {
+  padding: 105px 0 115px;
+}
+
+.intro-grid {
+  display: grid;
+  grid-template-columns: .8fr 1.2fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.intro-aside {
+  padding-top: 12px;
+}
+
+.intro-aside .eyebrow { margin-bottom: 25px; }
+
+.intro-aside p {
+  max-width: 310px;
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.9;
+}
+
+.intro-main h2 { max-width: 750px; }
+
+.intro-main h2 em {
+  color: var(--green);
+  font-weight: 400;
+}
+
+.intro-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  margin-top: 40px;
+  padding-top: 25px;
+  border-top: 1px solid var(--line);
+}
+
+.intro-bottom p {
+  max-width: 340px;
+  margin-bottom: 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+/* Services */
+
+.services {
+  background: #eae8e0;
+}
+
+.services-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 30px;
+  margin-bottom: 52px;
+}
+
+.services-top h2 { max-width: 670px; }
+
+.services-top .eyebrow { margin-bottom: 22px; }
+
+.service-list { border-top: 1px solid var(--line); }
+
+.service-row {
+  display: grid;
+  grid-template-columns: 62px minmax(0, 1fr) 240px 36px;
+  align-items: center;
+  gap: 22px;
+  padding: 30px 0;
+  border-bottom: 1px solid var(--line);
+  transition: padding .25s;
+}
+
+.service-row:hover { padding-left: 10px; padding-right: 10px; }
+
+.service-number {
+  align-self: start;
+  padding-top: 7px;
+  color: var(--muted);
+  font-size: 11px;
+  letter-spacing: .08em;
+}
+
+.service-title {
+  margin: 0 0 9px;
+  font-family: var(--serif);
+  font-size: clamp(23px, 2.5vw, 34px);
+  font-weight: 400;
+  letter-spacing: -.035em;
+}
+
+.service-description {
+  max-width: 480px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.service-price {
+  font-family: var(--display);
+  font-size: 19px;
+  font-weight: 600;
+  letter-spacing: -.04em;
+}
+
+.service-price small {
+  display: block;
+  margin-top: 6px;
+  color: var(--muted);
+  font-family: var(--sans);
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.service-arrow {
+  width: 34px;
+  height: 34px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 16px;
+  transition: background .2s, color .2s, transform .2s;
+}
+
+.service-row:hover .service-arrow {
+  background: var(--green);
+  color: #fff;
+  transform: rotate(-45deg);
+}
+
+.price-disclaimer {
+  margin: 23px 0 0;
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 1.8;
+}
+
+/* Systems */
+
+.systems { background: var(--bg); }
+
+.system-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border-top: 1px solid var(--line);
+  border-left: 1px solid var(--line);
+}
+
+.system {
+  position: relative;
+  min-height: 295px;
+  padding: 35px 35px 30px;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  overflow: hidden;
+  transition: background .3s;
+}
+
+.system:hover { background: #ebe9e1; }
+
+.system-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 44px;
+}
+
+.system-index {
+  color: var(--muted);
+  font-size: 10px;
+  letter-spacing: .1em;
+}
+
+.system-type {
+  font-size: 9px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--green);
+}
+
+.system h3 {
+  max-width: 370px;
+  margin-bottom: 13px;
+  font-family: var(--serif);
+  font-size: 31px;
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -.04em;
+}
+
+.system p {
+  max-width: 390px;
+  margin-bottom: 22px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.85;
+}
+
+.text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 13px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.text-link .arrow { color: var(--green); }
+
+.system-visual {
+  position: absolute;
+  right: 26px;
+  bottom: 24px;
+  width: 110px;
+  height: 72px;
+  opacity: .6;
+  pointer-events: none;
+}
+
+.system-visual span {
+  position: absolute;
+  display: block;
+  border: 1px solid #789078;
+  transform: skewY(-25deg);
+}
+
+.system-visual span:nth-child(1) {
+  width: 72px;
+  height: 24px;
+  left: 0;
+  top: 3px;
+  background: rgba(61,96,73,.08);
+}
+
+.system-visual span:nth-child(2) {
+  width: 72px;
+  height: 24px;
+  left: 16px;
+  top: 20px;
+  background: rgba(61,96,73,.13);
+}
+
+.system-visual span:nth-child(3) {
+  width: 72px;
+  height: 24px;
+  left: 32px;
+  top: 37px;
+  background: rgba(61,96,73,.2);
+}
+
+.system-visual.membrane span:nth-child(1) { border-color: #8196a0; }
+.system-visual.membrane span:nth-child(2) { border-color: #8196a0; }
+.system-visual.membrane span:nth-child(3) { border-color: #8196a0; }
+
+/* Why us */
+
+.why {
+  background: var(--green-dark);
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.why::after {
+  content: "RD";
+  position: absolute;
+  right: -22px;
+  bottom: -160px;
+  font-family: var(--display);
+  font-size: clamp(280px, 42vw, 590px);
+  font-weight: 800;
+  letter-spacing: -.12em;
+  line-height: 1;
+  color: rgba(255,255,255,.025);
+  pointer-events: none;
+}
+
+.why .eyebrow { color: var(--lime); }
+
+.why h2 { max-width: 750px; }
+
+.why h2 em {
+  color: var(--lime);
+  font-weight: 400;
+}
+
+.why-content {
+  position: relative;
+  z-index: 1;
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 70px;
+  margin-top: 70px;
+}
+
+.why-item {
+  padding: 26px 0 30px;
+  border-top: 1px solid rgba(255,255,255,.19);
+}
+
+.why-item .item-index {
+  display: block;
+  margin-bottom: 25px;
+  color: var(--lime);
+  font-size: 10px;
+  letter-spacing: .1em;
+}
+
+.why-item h3 {
+  margin-bottom: 12px;
+  font-family: var(--serif);
+  font-size: 27px;
+  font-weight: 400;
+  letter-spacing: -.03em;
+}
+
+.why-item p {
+  max-width: 390px;
+  margin-bottom: 0;
+  color: rgba(255,255,255,.64);
+  font-size: 12px;
+  line-height: 1.9;
+}
+
+/* Workflow */
+
+.process { background: var(--bg); }
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-top: 65px;
+  border-top: 1px solid var(--line);
+}
+
+.process-step {
+  padding: 28px 22px 0 0;
+  position: relative;
+}
+
+.process-step + .process-step { padding-left: 22px; }
+
+.process-step::before {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: 0;
+  width: 7px;
+  height: 7px;
+  background: var(--green);
+  border-radius: 50%;
+}
+
+.process-step .step-number {
+  display: block;
+  margin-bottom: 34px;
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.process-step h3 {
+  margin-bottom: 13px;
+  font-family: var(--serif);
+  font-size: 24px;
+  font-weight: 400;
+  letter-spacing: -.03em;
+}
+
+.process-step p {
+  margin-bottom: 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.85;
+}
+
+/* Projects */
+
+.projects { background: #eae8e0; }
+
+.project-feature {
+  display: grid;
+  grid-template-columns: 1fr .85fr;
+  min-height: 400px;
+  margin-top: 55px;
+  background: #273d2f;
+  color: #fff;
+}
+
+.project-art {
+  position: relative;
+  min-height: 340px;
+  overflow: hidden;
+  background:
+    linear-gradient(145deg, transparent 49.8%, rgba(227,231,211,.24) 50%, transparent 50.3%),
+    linear-gradient(32deg, transparent 48.9%, rgba(227,231,211,.17) 49%, transparent 49.4%),
+    radial-gradient(ellipse at 45% 25%, rgba(183,197,160,.23), transparent 58%),
+    linear-gradient(145deg, #53664f, #23362a);
+}
+
+.project-art::before,
+.project-art::after {
+  content: "";
+  position: absolute;
+  width: 85%;
+  height: 45%;
+  left: 10%;
+  top: 28%;
+  border: 1px solid rgba(233,237,218,.42);
+  background: linear-gradient(135deg, rgba(205,216,188,.2), rgba(12,25,17,.12));
+  clip-path: polygon(0 29%, 68% 0, 100% 31%, 32% 100%);
+  transform: rotate(-8deg);
+}
+
+.project-art::after {
+  width: 70%;
+  height: 33%;
+  left: 17%;
+  top: 50%;
+  opacity: .7;
+  transform: rotate(-8deg) translate(7px, 14px);
+}
+
+.project-art-label {
+  position: absolute;
+  z-index: 2;
+  left: 26px;
+  bottom: 24px;
+  font-size: 9px;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.72);
+}
+
+.project-info {
+  padding: 44px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.project-info .eyebrow { color: var(--lime); margin-bottom: 23px; }
+
+.project-info h3 {
+  margin-bottom: 14px;
+  font-family: var(--serif);
+  font-size: 39px;
+  font-weight: 400;
+  line-height: 1.12;
+  letter-spacing: -.04em;
+}
+
+.project-info > p {
+  color: rgba(255,255,255,.65);
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.project-specs {
+  margin: 23px 0;
+  border-top: 1px solid rgba(255,255,255,.2);
+}
+
+.project-spec {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 13px 0;
+  border-bottom: 1px solid rgba(255,255,255,.16);
+  font-size: 11px;
+}
+
+.project-spec span { color: rgba(255,255,255,.61); }
+
+.project-info .text-link { color: var(--lime); }
+
+.projects-note {
+  margin: 23px 0 0;
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 1.8;
+}
+
+/* FAQ */
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: .8fr 1.2fr;
+  gap: 90px;
+}
+
+.faq-intro .eyebrow { margin-bottom: 23px; }
+
+.faq-intro p {
+  max-width: 280px;
+  margin-top: 23px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.9;
+}
+
+.faq-list { border-top: 1px solid var(--line); }
+
+.faq-item { border-bottom: 1px solid var(--line); }
+
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  padding: 23px 0;
+  border: 0;
+  background: none;
+  color: var(--ink);
+  text-align: left;
+  cursor: pointer;
+}
+
+.faq-question span:first-child {
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.6;
+}
+
+.faq-plus {
+  flex-shrink: 0;
+  width: 27px;
+  height: 27px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  font-size: 17px;
+  font-weight: 400;
+  transition: transform .25s, background .25s;
+}
+
+.faq-item.active .faq-plus {
+  background: var(--green);
+  color: #fff;
+  transform: rotate(45deg);
+}
+
+.faq-answer {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows .3s;
+}
+
+.faq-item.active .faq-answer { grid-template-rows: 1fr; }
+
+.faq-answer > div { overflow: hidden; }
+
+.faq-answer p {
+  max-width: 540px;
+  margin: 0;
+  padding: 0 35px 23px 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.9;
+}
+
+/* CTA */
+
+.cta-section { padding: 0; }
+
+.cta-panel {
+  position: relative;
+  overflow: hidden;
+  padding: 82px 70px;
+  background: #dfe4d3;
+}
+
+.cta-panel::after {
+  content: "";
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  right: -95px;
+  top: -160px;
+  border: 1px solid rgba(61,96,73,.24);
+  transform: rotate(45deg);
+  box-shadow:
+    0 0 0 32px rgba(61,96,73,.025),
+    0 0 0 65px rgba(61,96,73,.025),
+    0 0 0 98px rgba(61,96,73,.025);
+  pointer-events: none;
+}
+
+.cta-content {
+  position: relative;
+  z-index: 1;
+  max-width: 730px;
+}
+
+.cta-content .eyebrow { margin-bottom: 23px; }
+
+.cta-content h2 { margin-bottom: 20px; }
+
+.cta-content > p {
+  max-width: 400px;
+  margin-bottom: 27px;
+  color: #666f61;
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+.cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 11px;
+}
+
+/* Contacts */
+
+.contacts {
+  padding: 120px 0 80px;
+  background: var(--bg);
+}
+
+.contacts-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 90px;
+}
+
+.contacts-main .eyebrow { margin-bottom: 23px; }
+
+.contacts-main h2 { margin-bottom: 29px; }
+
+.contact-phone {
+  display: inline-block;
+  margin-bottom: 12px;
+  font-family: var(--display);
+  font-size: clamp(24px, 3vw, 36px);
+  font-weight: 600;
+  letter-spacing: -.05em;
+}
+
+.contact-hours {
+  display: block;
+  margin-bottom: 25px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.contact-extra {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.contact-extra a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 310px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.contact-extra a span:last-child {
+  color: var(--green);
+  font-size: 17px;
+}
+
+.contacts-detail {
+  padding-top: 65px;
+}
+
+.address-label {
+  display: block;
+  margin-bottom: 13px;
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+}
+
+.address-text {
+  max-width: 370px;
+  margin-bottom: 27px;
+  font-family: var(--serif);
+  font-size: 29px;
+  line-height: 1.35;
+  letter-spacing: -.035em;
+}
+
+.contact-detail-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  padding: 17px 0;
+  border-top: 1px solid var(--line);
+  font-size: 12px;
+}
+
+.contact-detail-row span:first-child { color: var(--muted); }
+
+.contact-detail-row a {
+  text-align: right;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 25px;
+}
+
+.social-links a {
+  padding: 12px 15px;
+  border: 1px solid var(--line);
+  font-size: 11px;
+  transition: background .2s, color .2s;
+}
+
+.social-links a:hover {
+  background: var(--green);
+  color: #fff;
+}
+
+/* Footer */
+
+.footer {
+  padding: 26px 0;
+  background: #24372a;
+  color: #fff;
+}
+
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+}
+
+.footer .logo-mark { width: 30px; height: 30px; }
+
+.footer .logo-name { font-size: 10px; }
+
+.footer-note {
+  margin: 0;
+  color: rgba(255,255,255,.49);
+  font-size: 10px;
+}
+
+.footer-right {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.footer-right a {
+  color: rgba(255,255,255,.72);
+  font-size: 10px;
+}
+
+.footer-right a:hover { color: var(--lime); }
+
+.demo-label {
+  color: var(--lime);
+  font-size: 9px;
+  letter-spacing: .05em;
+}
+
+/* Floating mobile action */
+
+.mobile-bar { display: none; }
+
+/* Motion */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity .75s ease, transform .75s cubic-bezier(.2,.65,.25,1);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.delay-1 { transition-delay: .1s; }
+.delay-2 { transition-delay: .2s; }
+.delay-3 { transition-delay: .3s; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+  }
+  .reveal { opacity: 1; transform: none; }
+}
+
+/* Tablet */
+
+@media (max-width: 1050px) {
+  .container { width: calc(100% - 56px); }
+  .nav { gap: 17px; }
+  .nav a { font-size: 10px; }
+  .header-phone { display: none; }
+  .intro-grid { gap: 45px; }
+  .section { padding: 95px 0; }
+  .service-row { grid-template-columns: 38px minmax(0, 1fr) 180px 32px; gap: 16px; }
+  .faq-grid, .contacts-grid { gap: 55px; }
+  .cta-panel { padding: 65px 45px; }
+}
+
+/* Mobile */
+
+@media (max-width: 700px) {
+  html { scroll-padding-top: 65px; }
+
+  .container { width: calc(100% - 40px); }
+
+  .section { padding: 76px 0; }
+
+  .section-head {
+    display: block;
+    margin-bottom: 37px;
+  }
+
+  h2 { font-size: clamp(39px, 11vw, 54px); }
+
+  .section-note {
+    margin-top: 19px;
+    max-width: 320px;
+  }
+
+  .header {
+    height: 68px;
+    background: rgba(35,53,41,.14);
+  }
+
+  .header-inner { gap: 10px; }
+
+  .logo { gap: 9px; }
+
+  .logo-mark { width: 31px; height: 31px; }
+
+  .logo-name { font-size: 10px; }
+
+  .logo-name small { font-size: 7px; }
+
+  .header-right { gap: 10px; }
+
+  .header-cta {
+    padding: 12px 11px;
+    font-size: 10px;
+  }
+
+  .menu-toggle {
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
+  }
+
+  .nav {
+    position: absolute;
+    top: 68px;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 0 20px;
+    background: #263c2e;
+    max-height: 0;
+    overflow: hidden;
+    visibility: hidden;
+    transition: max-height .3s, padding .3s, visibility .3s;
+  }
+
+  .nav.open {
+    max-height: 340px;
+    padding-top: 8px;
+    padding-bottom: 14px;
+    visibility: visible;
+  }
+
+  .nav a {
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(255,255,255,.13);
+    font-size: 12px;
+  }
+
+  .nav a:last-child { border-bottom: 0; }
+
+  .hero {
+    min-height: 790px;
+    min-height: 100svh;
+    align-items: flex-start;
+  }
+
+  .hero::before {
+    background:
+      radial-gradient(ellipse at 90% 38%, rgba(139,160,116,.24), transparent 43%),
+      linear-gradient(150deg, #25372b 0%, #334936 67%, #45583e 100%);
+  }
+
+  .hero-grid {
+    inset: 20% 0 10% 15%;
+    background-size: 42px 42px;
+    opacity: .09;
+  }
+
+  .roof-art {
+    width: 118vw;
+    height: 95vw;
+    max-height: 440px;
+    top: 31%;
+    right: -47%;
+    opacity: .48;
+  }
+
+  .hero-content {
+    padding-top: 144px;
+    padding-bottom: 200px;
+  }
+
+  .hero .eyebrow {
+    margin-bottom: 26px;
+    font-size: 9px;
+    letter-spacing: .14em;
+  }
+
+  .hero h1 {
+    max-width: 500px;
+    margin-bottom: 25px;
+    font-size: clamp(53px, 12.5vw, 75px);
+    line-height: 1.02;
+  }
+
+  .hero-description {
+    max-width: 330px;
+    font-size: 12px;
+    line-height: 1.9;
+  }
+
+  .hero-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+    max-width: 290px;
+    gap: 9px;
+  }
+
+  .btn {
+    min-height: 52px;
+    padding: 0 17px;
+    justify-content: space-between;
+    font-size: 11px;
+  }
+
+  .hero-actions .btn-outline {
+    color: #fff;
+    border-color: rgba(255,255,255,.35);
+  }
+
+  .hero-actions .btn-outline:hover {
+    background: rgba(255,255,255,.1);
+  }
+
+  .hero-meta { bottom: 0; }
+
+  .hero-meta-inner {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .hero-stat {
+    padding: 15px 8px 17px 0;
+    min-width: 0;
+  }
+
+  .hero-stat + .hero-stat { padding-left: 10px; }
+
+  .hero-stat strong {
+    font-size: clamp(19px, 6vw, 25px);
+  }
+
+  .hero-stat span {
+    font-size: 9px;
+    line-height: 1.5;
+  }
+
+  .intro { padding: 72px 0 78px; }
+
+  .intro-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .intro-aside { padding-top: 0; }
+
+  .intro-aside .eyebrow { margin-bottom: 15px; }
+
+  .intro-aside p {
+    max-width: 350px;
+    font-size: 12px;
+  }
+
+  .intro-main h2 { font-size: 43px; }
+
+  .intro-bottom {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 19px;
+    margin-top: 27px;
+    padding-top: 21px;
+  }
+
+  .intro-bottom p { font-size: 11px; }
+
+  .services-top {
+    display: block;
+    margin-bottom: 34px;
+  }
+
+  .services-top h2 { font-size: 43px; }
+
+  .service-row {
+    position: relative;
+    grid-template-columns: 29px minmax(0, 1fr) 24px;
+    gap: 10px;
+    padding: 24px 0;
+    align-items: start;
+  }
+
+  .service-row:hover { padding-left: 0; padding-right: 0; }
+
+  .service-number { padding-top: 7px; font-size: 10px; }
+
+  .service-title {
+    font-size: 25px;
+    line-height: 1.13;
+  }
+
+  .service-description {
+    font-size: 11px;
+    line-height: 1.8;
+  }
+
+  .service-price {
+    grid-column: 2;
+    grid-row: 2;
+    margin-top: 5px;
+    font-size: 17px;
+  }
+
+  .service-price small { font-size: 9px; }
+
+  .service-arrow {
+    grid-column: 3;
+    grid-row: 1;
+    width: 25px;
+    height: 25px;
+    font-size: 14px;
+  }
+
+  .price-disclaimer { font-size: 10px; }
+
+  .system-grid { grid-template-columns: 1fr; }
+
+  .system {
+    min-height: 260px;
+    padding: 27px 23px 25px;
+  }
+
+  .system-top { margin-bottom: 36px; }
+
+  .system h3 {
+    max-width: 290px;
+    font-size: 29px;
+  }
+
+  .system p {
+    max-width: 275px;
+    font-size: 11px;
+  }
+
+  .system-visual {
+    right: 12px;
+    bottom: 10px;
+    transform: scale(.75);
+    transform-origin: bottom right;
+    opacity: .42;
+  }
+
+  .why h2 { font-size: 43px; }
+
+  .why-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+    margin-top: 40px;
+  }
+
+  .why-item { padding: 22px 0 25px; }
+
+  .why-item .item-index { margin-bottom: 17px; }
+
+  .why-item h3 { font-size: 26px; }
+
+  .why-item p { font-size: 11px; }
+
+  .process-grid {
+    grid-template-columns: 1fr 1fr;
+    row-gap: 34px;
+    margin-top: 43px;
+  }
+
+  .process-step { padding: 23px 15px 0 0; }
+
+  .process-step + .process-step { padding-left: 15px; }
+
+  .process-step:nth-child(odd) { padding-left: 0; }
+
+  .process-step .step-number { margin-bottom: 23px; }
+
+  .process-step h3 { font-size: 23px; }
+
+  .process-step p { font-size: 11px; }
+
+  .project-feature {
+    grid-template-columns: 1fr;
+    margin-top: 34px;
+  }
+
+  .project-art { min-height: 245px; }
+
+  .project-info { padding: 31px 24px 32px; }
+
+  .project-info h3 { font-size: 35px; }
+
+  .project-spec { font-size: 10px; }
+
+  .faq-grid {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+
+  .faq-intro p { margin-top: 17px; }
+
+  .faq-question { padding: 20px 0; }
+
+  .faq-question span:first-child { font-size: 12px; }
+
+  .faq-answer p { font-size: 11px; }
+
+  .cta-panel {
+    width: 100%;
+    padding: 57px 20px;
+  }
+
+  .cta-panel::after {
+    width: 250px;
+    height: 250px;
+    right: -160px;
+    top: -60px;
+  }
+
+  .cta-content h2 { font-size: 43px; }
+
+  .cta-content > p { font-size: 12px; }
+
+  .cta-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+    max-width: 300px;
+  }
+
+  .contacts { padding: 76px 0 60px; }
+
+  .contacts-grid {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+
+  .contacts-main h2 { font-size: 43px; }
+
+  .contact-phone { font-size: 29px; }
+
+  .contacts-detail { padding-top: 0; }
+
+  .address-text { font-size: 27px; }
+
+  .contact-detail-row { font-size: 11px; }
+
+  .social-links { gap: 8px; }
+
+  .social-links a { padding: 12px; }
+
+  .footer { padding: 23px 0 83px; }
+
+  .footer-inner {
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 19px;
+  }
+
+  .footer-right {
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 17px;
+  }
+
+  .footer-note { font-size: 9px; }
+
+  .demo-label { font-size: 9px; }
+
+  .mobile-bar {
+    position: fixed;
+    z-index: 30;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+    background: rgba(244,242,236,.96);
+    border-top: 1px solid var(--line);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+
+  .mobile-bar .btn {
+    min-height: 46px;
+    padding: 0 13px;
+    justify-content: center;
+    gap: 9px;
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 360px) {
+  .container { width: calc(100% - 32px); }
+  .header-cta { padding: 11px 8px; font-size: 9px; }
+  .logo-name { font-size: 9px; }
+  .hero h1 { font-size: 51px; }
+  .hero-stat strong { font-size: 18px; }
+  .service-title { font-size: 23px; }
+  .system { padding-inline: 19px; }
+}
+</style>
+</head>
+
+<body>
+
+<header class="header">
+  <div class="container header-inner">
+    <a class="logo" href="#home" aria-label="Roof Development — на главную">
+      <span class="logo-mark"></span>
+      <span class="logo-name">ROOF DEVELOPMENT<small>KAZAN · КРОВЕЛЬНЫЕ СИСТЕМЫ</small></span>
+    </a>
+
+    <nav class="nav" id="navigation">
+      <a href="#services">Услуги</a>
+      <a href="#systems">Виды кровли</a>
+      <a href="#about">Преимущества</a>
+      <a href="#projects">Объекты</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+
+    <div class="header-right">
+      <a class="header-phone" href="tel:+78432126040">
+        +7 (843) 212-60-40
+        <small>Ежедневно с 8:00 до 18:00</small>
+      </a>
+      <a class="header-cta" href="tel:+78432126040">Обсудить проект <span class="arrow">↗</span></a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Открыть меню" aria-expanded="false">☰</button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="home">
+    <div class="hero-grid"></div>
+
+    <div class="roof-art" aria-hidden="true">
+      <div class="plane plane-one"></div>
+      <div class="plane plane-two"></div>
+      <div class="plane plane-three"></div>
+      <div class="line"></div>
+      <div class="line line-two"></div>
+    </div>
+
+    <div class="container hero-content">
+      <div class="eyebrow reveal">Казань · Татарстан · Кровельные работы</div>
+
+      <h1 class="reveal delay-1">
+        Плоская кровля<br>
+        <em>под ключ.</em>
+      </h1>
+
+      <p class="hero-description reveal delay-2">
+        Монтаж и ремонт плоских кровель для частных, коммерческих и промышленных объектов. От подготовки основания до готовой гидроизоляционной системы.
+      </p>
+
+      <div class="hero-actions reveal delay-3">
+        <a class="btn btn-light" href="tel:+78432126040">
+          Обсудить объект <span class="arrow">↗</span>
+        </a>
+        <a class="btn btn-outline" href="#services">
+          Смотреть услуги <span class="arrow">↓</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-meta">
+      <div class="container hero-meta-inner">
+        <div class="hero-stat">
+          <strong>12+ лет</strong>
+          <span>Опыт в кровельных работах</span>
+        </div>
+        <div class="hero-stat">
+          <strong>5 лет</strong>
+          <span>Гарантия на монтажные работы</span>
+        </div>
+        <div class="hero-stat">
+          <strong>300+</strong>
+          <span>Кровель смонтировано за 2022–2025 годы</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="intro">
+    <div class="container intro-grid">
+      <div class="intro-aside reveal">
+        <div class="eyebrow">01 / О компании</div>
+        <p>
+          Roof Development Kazan — монтаж плоских кровель в Казани и Татарстане. Работаем с основаниями из железобетона, профлиста и дерева.
+        </p>
+      </div>
+
+      <div class="intro-main reveal delay-1">
+        <h2>
+          Кровельная система, рассчитанная <em>на ваш объект.</em>
+        </h2>
+
+        <div class="intro-bottom">
+          <p>
+            ИЖС, промышленно-гражданское строительство, административные здания и многоквартирные дома.
+          </p>
+          <a href="#systems" class="text-link">Подобрать систему <span class="arrow">↗</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section services" id="services">
+    <div class="container">
+      <div class="services-top reveal">
+        <div>
+          <div class="eyebrow">02 / Услуги</div>
+          <h2>Что мы<br>монтируем.</h2>
+        </div>
+        <p class="section-note">
+          Отдельные кровельные системы и комплексные работы под ключ. Состав и стоимость определяются после изучения объекта.
+        </p>
+      </div>
+
+      <div class="service-list">
+        <a class="service-row reveal" href="tel:+78432126040">
+          <span class="service-number">01</span>
+          <div>
+            <h3 class="service-title">Мембранная кровля</h3>
+            <p class="service-description">ПВХ-мембрана, балластная система, устройство по стяжке или клиновидной теплоизоляции.</p>
+          </div>
+          <div class="service-price">По расчёту<small>Стоимость зависит от проекта</small></div>
+          <span class="service-arrow">↗</span>
+        </a>
+
+        <a class="service-row reveal" href="tel:+78432126040">
+          <span class="service-number">02</span>
+          <div>
+            <h3 class="service-title">Наплавляемая кровля</h3>
+            <p class="service-description">Двухслойная битумно-полимерная гидроизоляция по подготовленному основанию.</p>
+          </div>
+          <div class="service-price">По расчёту<small>Стоимость зависит от проекта</small></div>
+          <span class="service-arrow">↗</span>
+        </a>
+
+        <a class="service-row reveal" href="tel:+78432126040">
+          <span class="service-number">03</span>
+          <div>
+            <h3 class="service-title">Эксплуатируемая кровля</h3>
+            <p class="service-description">Кровли с финишным покрытием из террасной доски, плитки или с озеленением.</p>
+          </div>
+          <div class="service-price">По расчёту<small>По составу кровельного пирога</small></div>
+          <span class="service-arrow">↗</span>
+        </a>
+
+        <a class="service-row reveal" href="tel:+78432126040">
+          <span class="service-number">04</span>
+          <div>
+            <h3 class="service-title">Ремонт плоской кровли</h3>
+            <p class="service-description">Диагностика и ремонт покрытий из ПВХ-мембраны или наплавляемых материалов.</p>
+          </div>
+          <div class="service-price">От 100 м²<small>Минимальная площадь ремонта</small></div>
+          <span class="service-arrow">↗</span>
+        </a>
+
+        <a class="service-row reveal" href="tel:+78432126040">
+          <span class="service-number">05</span>
+          <div>
+            <h3 class="service-title">Комплектация кровли</h3>
+            <p class="service-description">Мембраны, кровельные воронки TOPWET и системы обнаружения протечек.</p>
+          </div>
+          <div class="service-price">По запросу<small>Подбор материалов для объекта</small></div>
+          <span class="service-arrow">↗</span>
+        </a>
+      </div>
+
+      <p class="price-disclaimer">
+        Стоимость монтажа в открытых материалах компании не указана. Цены не подменены предположительными тарифами: запросите расчёт по вашему проекту.
+      </p>
+    </div>
+  </section>
+
+  <section class="section systems" id="systems">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <div class="eyebrow">03 / Технологии</div>
+          <h2>Четыре решения.<br>Разные задачи.</h2>
+        </div>
+        <p class="section-note">
+          Тип покрытия, основание, теплоизоляция и способ отвода воды определяют состав системы.
+        </p>
+      </div>
+
+      <div class="system-grid">
+        <article class="system reveal">
+          <div class="system-top">
+            <span class="system-index">SYSTEM / 01</span>
+            <span class="system-type">Полимерная мембрана</span>
+          </div>
+          <h3>Мембранная кровля</h3>
+          <p>ПВХ-мембрана по стяжке или клиновидной теплоизоляции. Также возможна балластная система.</p>
+          <a href="tel:+78432126040" class="text-link">Обсудить решение <span class="arrow">↗</span></a>
+          <div class="system-visual membrane" aria-hidden="true"><span></span><span></span><span></span></div>
+        </article>
+
+        <article class="system reveal delay-1">
+          <div class="system-top">
+            <span class="system-index">SYSTEM / 02</span>
+            <span class="system-type">Битумная гидроизоляция</span>
+          </div>
+          <h3>Наплавляемая кровля</h3>
+          <p>Двухслойное покрытие из битумно-полимерных материалов по стяжке или теплоизоляции.</p>
+          <a href="tel:+78432126040" class="text-link">Обсудить решение <span class="arrow">↗</span></a>
+          <div class="system-visual" aria-hidden="true"><span></span><span></span><span></span></div>
+        </article>
+
+        <article class="system reveal">
+          <div class="system-top">
+            <span class="system-index">SYSTEM / 03</span>
+            <span class="system-type">Дополнительная нагрузка</span>
+          </div>
+          <h3>Эксплуатируемая кровля</h3>
+          <p>Финишное покрытие из террасной доски, плитки или озеленение с учётом устройства основания.</p>
+          <a href="tel:+78432126040" class="text-link">Обсудить решение <span class="arrow">↗</span></a>
+          <div class="system-visual" aria-hidden="true"><span></span><span></span><span></span></div>
+        </article>
+
+        <article class="system reveal delay-1">
+          <div class="system-top">
+            <span class="system-index">SYSTEM / 04</span>
+            <span class="system-type">Деревянное основание</span>
+          </div>
+          <h3>Кровля по OSB и фанере</h3>
+          <p>Монтаж плоской кровли по деревянному основанию с подбором подходящих слоёв системы.</p>
+          <a href="tel:+78432126040" class="text-link">Обсудить решение <span class="arrow">↗</span></a>
+          <div class="system-visual" aria-hidden="true"><span></span><span></span><span></span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section why" id="about">
+    <div class="container why-content">
+      <div class="reveal">
+        <div class="eyebrow">04 / Почему Roof Development</div>
+        <h2>Важны не только<br>материалы, но и <em>монтаж.</em></h2>
+      </div>
+
+      <div class="why-grid">
+        <article class="why-item reveal">
+          <span class="item-index">01 — ОПЫТ</span>
+          <h3>Более 12 лет в отрасли</h3>
+          <p>Компания работает с плоскими кровлями в Казани и Татарстане.</p>
+        </article>
+
+        <article class="why-item reveal delay-1">
+          <span class="item-index">02 — ГАРАНТИЯ</span>
+          <h3>5 лет на работы</h3>
+          <p>Гарантия на монтажные работы согласно заявленным условиям компании.</p>
+        </article>
+
+        <article class="why-item reveal">
+          <span class="item-index">03 — КОНТРОЛЬ</span>
+          <h3>Поиск протечек</h3>
+          <p>Используем современное оборудование для проверки кровли на наличие протечек.</p>
+        </article>
+
+        <article class="why-item reveal delay-1">
+          <span class="item-index">04 — ОРГАНИЗАЦИЯ</span>
+          <h3>Варианты оплаты</h3>
+          <p>Возможно оформление в рассрочку. Компания также указывает возможность начать работы без предоплаты — условия согласовываются по проекту.</p>
+        </article>
+
+        <article class="why-item reveal">
+          <span class="item-index">05 — СПЕЦИАЛИЗАЦИЯ</span>
+          <h3>Плоские кровли</h3>
+          <p>Монтаж по железобетону, профлисту, дереву, OSB и фанере.</p>
+        </article>
+
+        <article class="why-item reveal delay-1">
+          <span class="item-index">06 — ГЕОГРАФИЯ</span>
+          <h3>Казань и Татарстан</h3>
+          <p>Работаем на объектах в Казани и других городах региона. Также есть реализованные проекты в соседних регионах.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section process" id="process">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <div class="eyebrow">05 / Этапы работы</div>
+          <h2>От запроса<br>до готовой кровли.</h2>
+        </div>
+        <p class="section-note">
+          Порядок работ и состав системы уточняются с учётом проектной документации и состояния основания.
+        </p>
+      </div>
+
+      <div class="process-grid">
+        <article class="process-step reveal">
+          <span class="step-number">ШАГ / 01</span>
+          <h3>Заявка</h3>
+          <p>Вы рассказываете об объекте, его площади, основании и текущем состоянии кровли.</p>
+        </article>
+
+        <article class="process-step reveal delay-1">
+          <span class="step-number">ШАГ / 02</span>
+          <h3>Обследование</h3>
+          <p>Уточняются конструкция кровли, объём работ и требования к гидроизоляции.</p>
+        </article>
+
+        <article class="process-step reveal delay-2">
+          <span class="step-number">ШАГ / 03</span>
+          <h3>Расчёт</h3>
+          <p>Согласовываются кровельная система, материалы, стоимость и условия выполнения работ.</p>
+        </article>
+
+        <article class="process-step reveal delay-3">
+          <span class="step-number">ШАГ / 04</span>
+          <h3>Монтаж</h3>
+          <p>Выполняются согласованные работы по устройству кровельной системы.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section projects" id="projects">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <div class="eyebrow">06 / Портфолио</div>
+          <h2>Реальные объекты.<br>Конкретные объёмы.</h2>
+        </div>
+        <p class="section-note">
+          Примеры объектов и состав работ из материалов Roof Development. Декоративная графика используется вместо фотографий.
+        </p>
+      </div>
+
+      <article class="project-feature reveal">
+        <div class="project-art">
+          <span class="project-art-label">Roof Development / Казань</span>
+        </div>
+
+        <div class="project-info">
+          <div class="eyebrow">Объект / 01</div>
+          <h3>База отдыха<br>«Эдем»</h3>
+          <p>Балластная кровельная система с ПВХ-мембраной.</p>
+
+          <div class="project-specs">
+            <div class="project-spec">
+              <span>Горизонталь</span>
+              <strong>612,6 м²</strong>
+            </div>
+            <div class="project-spec">
+              <span>Вертикаль</span>
+              <strong>342,24 п. м</strong>
+            </div>
+            <div class="project-spec">
+              <span>Воронки</span>
+              <strong>10 шт.</strong>
+            </div>
+          </div>
+
+          <a href="tel:+78432126040" class="text-link">Запросить расчёт своего объекта <span class="arrow">↗</span></a>
+        </div>
+      </article>
+
+      <p class="projects-note">
+        Другие объекты из портфолио компании: «Казанская Усадьба», СНТ «Берег», Тетеево, Кзыл-Иль, Аракчинская и Пермяки. Фотографии проектов в этой демо-версии не используются.
+      </p>
+    </div>
+  </section>
+
+  <section class="section faq" id="faq">
+    <div class="container faq-grid">
+      <div class="faq-intro reveal">
+        <div class="eyebrow">07 / Вопросы и ответы</div>
+        <h2>Перед началом работ.</h2>
+        <p>Основная информация о монтаже плоской кровли. Точные условия определяются при обсуждении объекта.</p>
+      </div>
+
+      <div class="faq-list reveal delay-1">
+        <div class="faq-item active">
+          <button class="faq-question" aria-expanded="true">
+            <span>Какую кровлю можно смонтировать?</span>
+            <span class="faq-plus">+</span>
+          </button>
+          <div class="faq-answer">
+            <div>
+              <p>Мембранную, наплавляемую и эксплуатируемую. Также выполняется монтаж по основаниям из железобетона, профлиста и дерева, включая OSB и фанеру.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Сколько стоит монтаж квадратного метра?</span>
+            <span class="faq-plus">+</span>
+          </button>
+          <div class="faq-answer">
+            <div>
+              <p>Единого подтверждённого тарифа за квадратный метр в предоставленных материалах нет. Стоимость рассчитывается с учётом основания, состава кровельной системы, площади и объёма работ.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Есть ли гарантия на работы?</span>
+            <span class="faq-plus">+</span>
+          </button>
+          <div class="faq-answer">
+            <div>
+              <p>Компания заявляет гарантию 5 лет на монтажные работы. Конкретные условия и объём гарантийных обязательств необходимо согласовать до начала проекта.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Можно ли начать работы без предоплаты?</span>
+            <span class="faq-plus">+</span>
+          </button>
+          <div class="faq-answer">
+            <div>
+              <p>Компания указывает такую возможность, а также оформление рассрочки. Доступность этих условий зависит от конкретного проекта и согласования с компанией.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Выполняете ли вы ремонт старой кровли?</span>
+            <span class="faq-plus">+</span>
+          </button>
+          <div class="faq-answer">
+            <div>
+              <p>Да. Компания диагностирует и ремонтирует плоские кровли из ПВХ-мембраны и наплавляемых материалов. Заявленная минимальная площадь ремонта — 100 м².</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>В каких городах вы работаете?</span>
+            <span class="faq-plus">+</span>
+          </button>
+          <div class="faq-answer">
+            <div>
+              <p>Основной регион работы — Казань и Татарстан. В материалах компании также указаны выполненные объекты в Йошкар-Оле, Нижнекамске, Ижевске и Набережных Челнах.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-panel reveal">
+        <div class="cta-content">
+          <div class="eyebrow">08 / Ваш объект</div>
+          <h2>Начнём с расчёта.</h2>
+          <p>
+            Расскажите, что нужно смонтировать или отремонтировать. Обсудим площадь, основание и подходящую кровельную систему.
+          </p>
+          <div class="cta-actions">
+            <a class="btn" href="tel:+78432126040">Позвонить в компанию <span class="arrow">↗</span></a>
+            <a class="btn btn-outline" href="https://wa.me/79393726007" target="_blank" rel="noopener noreferrer">Написать в WhatsApp <span class="arrow">↗</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contacts" id="contacts">
+    <div class="container contacts-grid">
+      <div class="contacts-main reveal">
+        <div class="eyebrow">09 / Контакты</div>
+        <h2>Обсудим<br>вашу кровлю.</h2>
+
+        <a class="contact-phone" href="tel:+78432126040">+7 (843) 212-60-40</a>
+        <span class="contact-hours">Режим работы: с 8:00 до 18:00</span>
+
+        <a class="btn" href="tel:+78432126040" style="max-width:300px;width:100%;">
+          Позвонить <span class="arrow">↗</span>
+        </a>
+
+        <div class="contact-extra">
+          <a href="tel:+79145381183">
+            <span>+7 (914) 538-11-83</span><span>↗</span>
+          </a>
+          <a href="tel:+78432104574">
+            <span>+7 (843) 210-45-74</span><span>↗</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="contacts-detail reveal delay-1">
+        <span class="address-label">Адрес</span>
+        <p class="address-text">Казань, проспект Альберта Камалеева, 1</p>
+
+        <div class="contact-detail-row">
+          <span>Регион работ</span>
+          <span>Казань и Татарстан</span>
+        </div>
+
+        <div class="contact-detail-row">
+          <span>Время связи</span>
+          <span>08:00–18:00</span>
+        </div>
+
+        <div class="social-links">
+          <a href="https://wa.me/79393726007" target="_blank" rel="noopener noreferrer">WhatsApp ↗</a>
+          <a href="https://t.me/roofdevelopmentkazan" target="_blank" rel="noopener noreferrer">Telegram ↗</a>
+          <a href="https://vk.com/roofdevelopmentkzn" target="_blank" rel="noopener noreferrer">ВКонтакте ↗</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <a class="logo" href="#home">
+      <span class="logo-mark"></span>
+      <span class="logo-name">ROOF DEVELOPMENT<small>KAZAN</small></span>
+    </a>
+
+    <p class="footer-note">Плоская кровля · Монтаж · Ремонт</p>
+
+    <div class="footer-right">
+      <a href="#services">Услуги</a>
+      <a href="#contacts">Контакты</a>
+      <span class="demo-label">Демо-версия сайта</span>
+    </div>
+  </div>
+</footer>
+
+<div class="mobile-bar" aria-label="Быстрая связь">
+  <a class="btn btn-outline" href="https://wa.me/79393726007" target="_blank" rel="noopener noreferrer">WhatsApp ↗</a>
+  <a class="btn" href="tel:+78432126040">Позвонить ↗</a>
+</div>
+
+<script>
+(function () {
+  const menuToggle = document.getElementById('menuToggle');
+  const navigation = document.getElementById('navigation');
+
+  menuToggle.addEventListener('click', function () {
+    const isOpen = navigation.classList.toggle('open');
+    menuToggle.setAttribute('aria-expanded', String(isOpen));
+    menuToggle.setAttribute('aria-label', isOpen ? 'Закрыть меню' : 'Открыть меню');
+    menuToggle.textContent = isOpen ? '×' : '☰';
+  });
+
+  navigation.querySelectorAll('a').forEach(function (link) {
+    link.addEventListener('click', function () {
+      navigation.classList.remove('open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+      menuToggle.setAttribute('aria-label', 'Открыть меню');
+      menuToggle.textContent = '☰';
+    });
+  });
+
+  const revealElements = document.querySelectorAll('.reveal');
+
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.12,
+      rootMargin: '0px 0px -35px 0px'
+    });
+
+    revealElements.forEach(function (element) {
+      observer.observe(element);
+    });
+  } else {
+    revealElements.forEach(function (element) {
+      element.classList.add('visible');
+    });
+  }
+
+  document.querySelectorAll('.faq-question').forEach(function (button) {
+    button.addEventListener('click', function () {
+      const item = button.closest('.faq-item');
+      const wasActive = item.classList.contains('active');
+
+      document.querySelectorAll('.faq-item').forEach(function (otherItem) {
+        otherItem.classList.remove('active');
+        otherItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+      });
+
+      if (!wasActive) {
+        item.classList.add('active');
+        button.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
