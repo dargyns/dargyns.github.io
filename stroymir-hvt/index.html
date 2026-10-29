@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>СтройМир — кровля в Казани</title>
+<meta name="description" content="Кровля из металла под ключ в Казани. Собственное производство листов по вашим размерам, доставка своим транспортом, монтаж.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+<!-- Цены на stroimir16.ru подгружаются из каталога и в открытом виде не видны, поэтому в демо стоит «по расчёту». Подставьте реальные «от … ₽». -->
+<style>
+:root{
+  --ink:#16171a;
+  --ink-2:#1e2024;
+  --paper:#f3efe8;
+  --paper-2:#e9e3d8;
+  --line:rgba(22,23,26,.14);
+  --line-d:rgba(243,239,232,.14);
+  --muted:#6b6862;
+  --muted-d:#a39e95;
+  --copper:#b8693d;
+  --copper-2:#d9895a;
+  --serif:"Cormorant Garamond",Georgia,serif;
+  --sans:"Manrope",system-ui,-apple-system,sans-serif;
+  --pad:20px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);background:var(--paper);color:var(--ink);font-size:16px;line-height:1.6;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1240px;margin:0 auto;padding:0 var(--pad)}
+
+/* Header */
+.top{position:fixed;inset:0 0 auto 0;z-index:50;transition:background .4s,backdrop-filter .4s}
+.top.solid{background:rgba(22,23,26,.86);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-family:var(--serif);font-size:24px;font-weight:600;color:var(--paper);letter-spacing:.01em}
+.logo span{color:var(--copper-2)}
+.top nav{display:none;gap:32px;font-size:14px;color:var(--muted-d)}
+.top nav a:hover{color:var(--paper)}
+.top-tel{font-size:14px;font-weight:600;color:var(--paper);border:1px solid var(--line-d);padding:9px 16px;border-radius:40px;transition:border-color .3s}
+.top-tel:hover{border-color:var(--copper-2)}
+
+/* Hero */
+.hero{position:relative;min-height:100vh;min-height:100svh;background:var(--ink);color:var(--paper);display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;padding:110px 0 40px}
+.hero::before{content:"";position:absolute;inset:0;background:
+  radial-gradient(120% 70% at 85% 10%,rgba(184,105,61,.38),transparent 60%),
+  radial-gradient(90% 60% at 0% 100%,rgba(70,78,88,.55),transparent 65%);}
+.sheet{position:absolute;right:-30%;top:12%;width:120%;height:46%;transform:rotate(-14deg);
+  background:repeating-linear-gradient(90deg,
+   rgba(243,239,232,.0) 0 18px,rgba(243,239,232,.07) 18px 22px,rgba(243,239,232,.0) 22px 40px,rgba(0,0,0,.25) 40px 44px);
+  -webkit-mask:linear-gradient(90deg,transparent,#000 30%,#000 70%,transparent);
+          mask:linear-gradient(90deg,transparent,#000 30%,#000 70%,transparent);
+  animation:drift 18s ease-in-out infinite alternate}
+.ridge{position:absolute;left:50%;top:20%;width:min(560px,90vw);transform:translateX(-30%);opacity:.9}
+@keyframes drift{to{transform:rotate(-14deg) translateX(-40px)}}
+.hero .wrap{position:relative;width:100%}
+.eyebrow{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--copper-2);margin-bottom:22px;display:flex;align-items:center;gap:12px}
+.eyebrow::before{content:"";width:28px;height:1px;background:var(--copper-2)}
+h1{font-family:var(--serif);font-weight:500;font-size:clamp(48px,13vw,132px);line-height:.92;letter-spacing:-.02em}
+h1 em{font-style:italic;color:var(--copper-2)}
+.lead{max-width:460px;margin-top:26px;color:var(--muted-d);font-size:17px}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:56px;padding:0 28px;border-radius:60px;font-weight:600;font-size:15px;transition:transform .3s,background .3s,color .3s,border-color .3s}
+.btn:active{transform:scale(.97)}
+.btn-main{background:var(--copper);color:#fff;flex:1 1 100%}
+.btn-main:hover{background:var(--copper-2)}
+.btn-ghost{border:1px solid var(--line-d);color:var(--paper);flex:1 1 calc(50% - 6px)}
+.btn-ghost:hover{border-color:var(--paper)}
+.hero-meta{display:flex;gap:28px;margin-top:44px;padding-top:22px;border-top:1px solid var(--line-d);font-size:13px;color:var(--muted-d)}
+.hero-meta b{display:block;font-family:var(--serif);font-size:34px;font-weight:500;color:var(--paper);line-height:1}
+
+/* Sections */
+section{padding:96px 0}
+.label{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--copper);margin-bottom:18px}
+h2{font-family:var(--serif);font-weight:500;font-size:clamp(38px,9vw,76px);line-height:1;letter-spacing:-.015em;max-width:820px}
+h2 em{font-style:italic;color:var(--copper)}
+.sub{color:var(--muted);max-width:520px;margin-top:18px}
+
+/* Services */
+.svc{margin-top:56px;border-top:1px solid var(--line)}
+.svc li{list-style:none;display:grid;grid-template-columns:1fr auto;gap:6px 16px;padding:24px 0;border-bottom:1px solid var(--line);transition:padding .35s}
+.svc li:hover{padding-left:10px}
+.svc h3{font-family:var(--serif);font-weight:600;font-size:25px;line-height:1.15}
+.svc p{grid-column:1/-1;color:var(--muted);font-size:15px;max-width:560px}
+.price{font-size:14px;font-weight:600;white-space:nowrap;align-self:start;padding-top:6px;color:var(--ink)}
+.price small{display:block;font-weight:400;color:var(--muted);font-size:12px;text-align:right}
+.mat{margin-top:44px;display:flex;flex-wrap:wrap;gap:8px}
+.mat span{font-size:13px;border:1px solid var(--line);padding:7px 14px;border-radius:40px;color:var(--muted)}
+
+/* Why */
+.why{background:var(--ink);color:var(--paper)}
+.why .label{color:var(--copper-2)}
+.why h2 em{color:var(--copper-2)}
+.why-grid{margin-top:60px;display:grid;gap:0}
+.why-item{padding:30px 0;border-top:1px solid var(--line-d);display:grid;grid-template-columns:56px 1fr;gap:16px}
+.why-item .n{font-family:var(--serif);font-size:20px;color:var(--copper-2);font-style:italic}
+.why-item h3{font-family:var(--serif);font-size:28px;font-weight:500;line-height:1.1;margin-bottom:8px}
+.why-item p{color:var(--muted-d);font-size:15px}
+.big-quote{margin-top:70px;font-family:var(--serif);font-size:clamp(30px,7vw,58px);line-height:1.08;max-width:900px;font-style:italic}
+.big-quote span{color:var(--copper-2)}
+
+/* Steps */
+.steps{margin-top:60px;counter-reset:s}
+.step{position:relative;padding:0 0 44px 64px}
+.step::before{counter-increment:s;content:"0" counter(s);position:absolute;left:0;top:-4px;font-family:var(--serif);font-size:30px;color:var(--copper)}
+.step::after{content:"";position:absolute;left:18px;top:44px;bottom:8px;width:1px;background:var(--line)}
+.step:last-child::after{display:none}
+.step h3{font-size:18px;font-weight:600;margin-bottom:6px}
+.step p{color:var(--muted);font-size:15px;max-width:480px}
+
+/* Rating band */
+.band{background:var(--paper-2);padding:64px 0}
+.band .wrap{display:flex;flex-direction:column;gap:18px}
+.rate{display:flex;align-items:baseline;gap:18px}
+.rate b{font-family:var(--serif);font-size:clamp(84px,24vw,160px);font-weight:500;line-height:.85;letter-spacing:-.03em}
+.stars{display:flex;gap:4px;margin-bottom:6px}
+.stars i{width:14px;height:14px;background:var(--copper);clip-path:polygon(50% 0,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%)}
+.rate-txt{font-size:15px;color:var(--muted)}
+.rate-txt strong{color:var(--ink);font-weight:600}
+
+/* FAQ */
+.faq{margin-top:50px;border-top:1px solid var(--line)}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;padding:24px 44px 24px 0;position:relative;font-family:var(--serif);font-size:24px;font-weight:600;line-height:1.2}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"";position:absolute;right:6px;top:50%;width:16px;height:16px;margin-top:-8px;
+  background:linear-gradient(var(--ink),var(--ink)) center/16px 1.5px no-repeat,linear-gradient(var(--ink),var(--ink)) center/1.5px 16px no-repeat;transition:transform .35s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{padding:0 0 26px;color:var(--muted);max-width:640px}
+
+/* Contacts */
+.contacts{background:var(--ink);color:var(--paper);position:relative;overflow:hidden}
+.contacts::before{content:"";position:absolute;width:520px;height:520px;right:-200px;bottom:-200px;border-radius:50%;background:radial-gradient(circle,rgba(184,105,61,.35),transparent 70%)}
+.contacts .label{color:var(--copper-2)}
+.contacts h2 em{color:var(--copper-2)}
+.c-grid{position:relative;margin-top:50px;display:grid;gap:36px}
+.c-block small{display:block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted-d);margin-bottom:10px}
+.c-block .addr{font-family:var(--serif);font-size:30px;line-height:1.15}
+.c-block .hours{color:var(--muted-d);font-size:15px;margin-top:8px}
+.phones a{display:block;font-family:var(--serif);font-size:28px;line-height:1.35;transition:color .3s}
+.phones a:hover{color:var(--copper-2)}
+.c-btns{display:grid;gap:10px;position:relative;margin-top:46px}
+.c-btns .btn{width:100%}
+.btn-line{border:1px solid var(--line-d);color:var(--paper)}
+.btn-line:hover{border-color:var(--copper-2);color:var(--copper-2)}
+.btn svg{width:18px;height:18px;flex:none}
+
+footer{background:var(--ink);color:var(--muted-d);font-size:12px;padding:26px 0 96px;border-top:1px solid var(--line-d)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px}
+
+/* Mobile call bar */
+.callbar{position:fixed;left:12px;right:12px;bottom:12px;z-index:60;display:flex;gap:8px;transform:translateY(140%);transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.callbar.on{transform:none}
+.callbar a{flex:1;height:52px;border-radius:40px;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:14px}
+.callbar .c1{background:var(--copper);color:#fff}
+.callbar .c2{background:rgba(22,23,26,.92);color:var(--paper);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);flex:0 0 52px}
+
+/* Reveal */
+.rv{opacity:0;transform:translateY(28px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.8,.2,1)}
+.rv.in{opacity:1;transform:none}
+.hero .rv{transition-delay:calc(var(--d,0) * 120ms)}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.sheet{animation:none}}
+
+/* Desktop */
+@media (min-width:820px){
+  :root{--pad:48px}
+  .top nav{display:flex}
+  .btn-main,.btn-ghost{flex:0 0 auto}
+  section{padding:140px 0}
+  .ridge{left:auto;right:4%;top:16%;transform:none;width:520px}
+  .hero{padding-bottom:56px}
+  .lead{font-size:19px}
+  .svc li{grid-template-columns:minmax(0,1fr) minmax(0,1.2fr) 150px;align-items:baseline;padding:30px 0}
+  .svc p{grid-column:auto}
+  .why-grid{grid-template-columns:1fr 1fr;column-gap:64px}
+  .split{display:grid;grid-template-columns:1fr 1.2fr;gap:80px;align-items:start}
+  .split .steps,.split .faq{margin-top:0}
+  .band .wrap{flex-direction:row;align-items:center;justify-content:space-between}
+  .c-grid{grid-template-columns:1.2fr 1fr 1fr}
+  .c-btns{grid-template-columns:repeat(3,1fr)}
+  .callbar{display:none}
+  footer{padding-bottom:26px}
+}
+</style>
+</head>
+<body>
+
+<header class="top" id="top">
+  <div class="wrap">
+    <a href="#" class="logo">Строй<span>Мир</span></a>
+    <nav>
+      <a href="#services">Услуги</a>
+      <a href="#why">Почему мы</a>
+      <a href="#process">Как работаем</a>
+      <a href="#faq">Вопросы</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+    <a href="tel:+79662504600" class="top-tel">Позвонить</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="sheet" aria-hidden="true"></div>
+  <svg class="ridge" viewBox="0 0 520 260" fill="none" aria-hidden="true">
+    <path d="M10 250 L260 30 L510 250" stroke="#d9895a" stroke-width="1.2" opacity=".85"/>
+    <path d="M50 250 L260 66 L470 250" stroke="#f3efe8" stroke-width=".8" opacity=".25"/>
+    <path d="M90 250 L260 102 L430 250" stroke="#f3efe8" stroke-width=".8" opacity=".15"/>
+    <path d="M130 250 L260 138 L390 250" stroke="#f3efe8" stroke-width=".8" opacity=".08"/>
+    <circle cx="260" cy="30" r="4" fill="#d9895a"/>
+  </svg>
+  <div class="wrap">
+    <div class="eyebrow rv" style="--d:0">Кровля в Казани и Татарстане</div>
+    <h1 class="rv" style="--d:1">Крыша<br>из своего<br><em>металла</em></h1>
+    <p class="lead rv" style="--d:2">Сами делаем листы под размеры вашей крыши, сами привозим и монтируем. Металлочерепица, профнастил, фальц, водостоки и снегозадержатели.</p>
+    <div class="cta rv" style="--d:3">
+      <a href="tel:+79662504600" class="btn btn-main">Позвонить и записаться на замер</a>
+      <a href="https://wa.me/79662504600" class="btn btn-ghost" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="https://t.me/lookru83" class="btn btn-ghost" target="_blank" rel="noopener">Telegram</a>
+    </div>
+    <div class="hero-meta rv" style="--d:4">
+      <div><b>4.8</b>рейтинг в 2ГИС</div>
+      <div><b>60</b>отзывов</div>
+      <div><b>с 2013</b>на рынке</div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <div class="label rv">Услуги</div>
+    <h2 class="rv">Всё, что бывает <em>на крыше</em> и вокруг неё</h2>
+    <p class="sub rv">Стоимость зависит от площади, уклонов и материала. Точную сумму называем после замера.</p>
+    <ul class="svc">
+      <li class="rv"><h3>Монтаж кровли под ключ</h3><p>Металлочерепица, профнастил или фальц. Подбор материала, изготовление листов в нужный размер, укладка с доборами.</p><div class="price">по расчёту<small>за м²</small></div></li>
+      <li class="rv"><h3>Расчёт кровельного проекта</h3><p>Считаем раскладку листов в профильной программе, чтобы не переплачивать за обрезки и лишний металл.</p><div class="price">по запросу<small>за проект</small></div></li>
+      <li class="rv"><h3>Водосточные системы</h3><p>Монтаж новой системы и ремонт старой. Желоба, трубы, воронки под конкретную крышу, чтобы вода уходила от фундамента.</p><div class="price">по расчёту<small>за п. м.</small></div></li>
+      <li class="rv"><h3>Снегозадержатели</h3><p>Установка и ремонт на металлочерепице и профнастиле. Снег не сходит пластом на машину, крыльцо и дорожки.</p><div class="price">по расчёту<small>за п. м.</small></div></li>
+      <li class="rv"><h3>Ограждения, мостики, лестницы</h3><p>Безопасный выход на крышу для обслуживания трубы и чистки снега. Монтаж и ремонт по нормам.</p><div class="price">по расчёту<small>за п. м.</small></div></li>
+      <li class="rv"><h3>Мансардные окна</h3><p>Врезка Velux или аналогов с герметизацией примыканий, чтобы под окном не было протечек.</p><div class="price">по расчёту<small>за окно</small></div></li>
+      <li class="rv"><h3>Фасады и утепление</h3><p>Металлосайдинг, профили для вентфасадов, утепление стен. Тот же металл и те же цвета, что на крыше.</p><div class="price">по расчёту<small>за м²</small></div></li>
+      <li class="rv"><h3>Заборы и порошковая покраска</h3><p>Профнастил, штакетник, 3D-панели. Красим металл порошком под нужный цвет.</p><div class="price">по расчёту<small>за п. м.</small></div></li>
+    </ul>
+    <div class="mat rv">
+      <span>Металлочерепица</span><span>Профнастил</span><span>Фальцевая кровля</span><span>Металлосайдинг</span><span>Водостоки</span><span>Снегозадержатели</span><span>Штакетник</span><span>3D-заборы</span>
+    </div>
+  </div>
+</section>
+
+<section class="why" id="why">
+  <div class="wrap">
+    <div class="label rv">Почему СтройМир</div>
+    <h2 class="rv">Металл, транспорт и монтаж <em>в одних руках</em></h2>
+    <div class="why-grid">
+      <div class="why-item rv"><span class="n">i</span><div><h3>Собственное производство</h3><p>Листы катаем под длину вашего ската. Нестандартные размеры и цвета делаем сами, без посредников.</p></div></div>
+      <div class="why-item rv"><span class="n">ii</span><div><h3>Свой автопарк</h3><p>Привозим от одного рабочего дня. Отгрузка с 7 складов по Казани и 10 складов по Татарстану.</p></div></div>
+      <div class="why-item rv"><span class="n">iii</span><div><h3>Точный расчёт</h3><p>Проект кровли считаем в специальной программе. Вы платите за металл, который ляжет на крышу.</p></div></div>
+      <div class="why-item rv"><span class="n">iv</span><div><h3>Работаем с 2013 года</h3><p>Частные дома, бани, склады, ангары и цеха в Казани и районах. Оплата любым удобным способом.</p></div></div>
+    </div>
+    <p class="big-quote rv">Один подрядчик от замера до последнего самореза, <span>а значит и один ответственный</span>.</p>
+  </div>
+</section>
+
+<section id="process">
+  <div class="wrap split">
+    <div>
+      <div class="label rv">Как проходит работа</div>
+      <h2 class="rv">Пять шагов <em>до готовой</em> крыши</h2>
+    </div>
+    <div class="steps">
+      <div class="step rv"><h3>Звонок или сообщение</h3><p>Расскажите, что за объект и что нужно сделать. Можно прислать фото крыши в WhatsApp или Telegram.</p></div>
+      <div class="step rv"><h3>Замер</h3><p>Приезжаем на объект, снимаем размеры скатов, смотрим стропила и примыкания.</p></div>
+      <div class="step rv"><h3>Расчёт и смета</h3><p>Делаем раскладку листов в программе и считаем материал, доборы и работу.</p></div>
+      <div class="step rv"><h3>Изготовление и доставка</h3><p>Катаем листы под ваши размеры и привозим своим транспортом.</p></div>
+      <div class="step rv"><h3>Монтаж</h3><p>Укладываем кровлю, ставим водосток и снегозадержатели, убираем за собой.</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="band">
+  <div class="wrap">
+    <div class="rate rv">
+      <b>4.8</b>
+      <div>
+        <div class="stars"><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="rate-txt"><strong>Рейтинг в 2ГИС</strong><br>по 60 отзывам клиентов</div>
+      </div>
+    </div>
+    <a href="tel:+79662504600" class="btn btn-main rv" style="flex:0 0 auto">Обсудить свою крышу</a>
+  </div>
+</div>
+
+<section id="faq">
+  <div class="wrap split">
+    <div>
+      <div class="label rv">Вопросы</div>
+      <h2 class="rv">Что обычно <em>спрашивают</em></h2>
+    </div>
+    <div class="faq">
+      <details class="rv"><summary>Можно купить только материал, без монтажа?</summary><p>Да. Изготовим листы и доборы по вашим размерам и привезём. Монтаж можно сделать своей бригадой.</p></details>
+      <details class="rv"><summary>Сколько ждать доставку?</summary><p>От одного рабочего дня. Везём своим автопарком, возможен самовывоз со склада.</p></details>
+      <details class="rv"><summary>Делаете листы нестандартной длины?</summary><p>Да, производство своё. Длину и цвет подбираем под конкретную крышу, чтобы на скате было меньше стыков.</p></details>
+      <details class="rv"><summary>Работаете за пределами Казани?</summary><p>Да, по всему Татарстану. Есть объекты в Зеленодольске, Высокой Горе, Осиново, Богатых Сабах и других районах.</p></details>
+      <details class="rv"><summary>Чините старые водостоки и снегозадержатели?</summary><p>Да, делаем и ремонт, и замену на уже готовой крыше. Сначала смотрим, что можно сохранить.</p></details>
+      <details class="rv"><summary>Как можно оплатить?</summary><p>Наличными, картой или по безналу для организаций. Подробности уточнит менеджер.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="contacts" id="contacts">
+  <div class="wrap">
+    <div class="label rv">Контакты</div>
+    <h2 class="rv">Приезжайте или <em>позвоните</em></h2>
+    <div class="c-grid">
+      <div class="c-block rv">
+        <small>Офис</small>
+        <div class="addr">Казань, ул. Маршала Чуйкова, 1а</div>
+        <div class="hours">БЦ Капитель, офис 203<br>Пн–Пт, 9.00–18.00</div>
+      </div>
+      <div class="c-block phones rv">
+        <small>Мобильный</small>
+        <a href="tel:+79662504600">+7 966 250-46-00</a>
+      </div>
+      <div class="c-block phones rv">
+        <small>Городские</small>
+        <a href="tel:+78432109443">+7 843 210-94-43</a>
+        <a href="tel:+78432448395">+7 843 244-83-95</a>
+        <a href="tel:+78432104574">+7 843 210-45-74</a>
+      </div>
+    </div>
+    <div class="c-btns rv">
+      <a href="tel:+79662504600" class="btn btn-main"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>Позвонить</a>
+      <a href="https://wa.me/79662504600" class="btn btn-line" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 21l1.6-4.7A9 9 0 1 1 8 19.5z"/></svg>WhatsApp</a>
+      <a href="https://t.me/lookru83" class="btn btn-line" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 4L3 11l6 2 2 6 3-4 5 4z"/></svg>Telegram</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© СтройМир, Казань · <a href="https://vk.com/krovlyakupit" target="_blank" rel="noopener">ВКонтакте</a></span>
+    <span>Демо-версия сайта</span>
+  </div>
+</footer>
+
+<div class="callbar" id="callbar">
+  <a href="tel:+79662504600" class="c1">Позвонить</a>
+  <a href="https://wa.me/79662504600" class="c2" target="_blank" rel="noopener" aria-label="WhatsApp">WA</a>
+  <a href="https://t.me/lookru83" class="c2" target="_blank" rel="noopener" aria-label="Telegram">TG</a>
+</div>
+
+<script>
+(function(){
+  var top=document.getElementById('top'),bar=document.getElementById('callbar');
+  function onScroll(){
+    var y=window.scrollY,h=window.innerHeight;
+    top.classList.toggle('solid',y>40);
+    bar.classList.toggle('on',y>h*0.7);
+  }
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+  var els=document.querySelectorAll('.rv');
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return;}
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}
+    });
+  },{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+  els.forEach(function(e){io.observe(e)});
+})();
+</script>
+</body>
+</html>
