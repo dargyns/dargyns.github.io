@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Стоматология «Вильнюс» — Челябинск, Орджоникидзе, 32</title>
+<meta name="description" content="Стоматология «Вильнюс» в Челябинске. Лечение, гигиена, протезирование и имплантация. Орджоникидзе, 32. Рейтинг 4.9 в 2ГИС.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f5f2ec;
+  --paper-2:#ece7de;
+  --ink:#16211f;
+  --deep:#1c3a35;
+  --deep-2:#244a43;
+  --sage:#c7d7cd;
+  --mint:#dfe9e2;
+  --brass:#b4844f;
+  --muted:#66706b;
+  --line:rgba(22,33,31,.13);
+  --serif:"Cormorant Garamond",Georgia,serif;
+  --sans:"Manrope",system-ui,-apple-system,sans-serif;
+  --pad:20px;
+  --max:1200px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);background:var(--paper);color:var(--ink);font-size:16px;line-height:1.6;overflow-x:hidden}
+@supports (overflow:clip){body{overflow-x:clip}}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
+h1,h2,h3{font-family:var(--serif);font-weight:500;letter-spacing:-.01em;line-height:1.02}
+em{font-style:italic;color:var(--brass)}
+
+/* header */
+.top{position:fixed;inset:0 0 auto 0;z-index:50;transition:background .4s,box-shadow .4s}
+.top.scrolled{background:rgba(245,242,236,.88);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 1px 0 var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{font-family:var(--serif);font-size:26px;font-weight:600;letter-spacing:.01em}
+.logo small{display:block;font-family:var(--sans);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);font-weight:500;margin-top:-4px}
+.nav{display:none;gap:32px;font-size:14px;color:var(--muted)}
+.nav a:hover{color:var(--ink)}
+.top-call{font-size:14px;font-weight:600;border:1px solid var(--ink);border-radius:999px;padding:9px 16px;transition:.3s}
+.top-call:hover{background:var(--ink);color:var(--paper)}
+
+/* hero */
+.hero{position:relative;min-height:100vh;min-height:100svh;display:flex;align-items:center;overflow:hidden;padding:110px 0 64px}
+.hero-bg{position:absolute;inset:0;pointer-events:none}
+.orb{position:absolute;border-radius:50%;filter:blur(60px);opacity:.75}
+.orb.a{width:520px;height:520px;background:radial-gradient(circle,#cfe0d5 0%,rgba(207,224,213,0) 70%);top:-160px;right:-200px}
+.orb.b{width:420px;height:420px;background:radial-gradient(circle,#ead8c2 0%,rgba(234,216,194,0) 70%);bottom:-140px;left:-160px}
+.hero .wrap{position:relative;display:grid;gap:44px;width:100%}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);font-weight:500}
+.eyebrow::before{content:"";width:28px;height:1px;background:var(--brass)}
+.hero h1{font-size:clamp(46px,12.5vw,108px);margin:22px 0 24px}
+.hero p.lead{font-size:17px;color:#3b4542;max-width:30em}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:56px;padding:0 28px;border-radius:999px;font-weight:600;font-size:15px;transition:transform .3s,background .3s,color .3s}
+.btn:active{transform:scale(.98)}
+.btn-dark{background:var(--deep);color:#f5f2ec}
+.btn-dark:hover{background:var(--ink)}
+.btn-line{border:1px solid var(--line);background:rgba(255,255,255,.4)}
+.btn-line:hover{border-color:var(--ink)}
+.btn svg{width:18px;height:18px;flex:none}
+
+.arch-box{position:relative;justify-self:center;width:min(300px,78vw);aspect-ratio:3/4}
+.arch{position:absolute;inset:0;border-radius:999px 999px 18px 18px;background:linear-gradient(170deg,var(--deep-2) 0%,var(--deep) 55%,#122a26 100%);overflow:hidden;box-shadow:0 40px 80px -30px rgba(28,58,53,.55)}
+.arch::before{content:"";position:absolute;inset:14px;border-radius:999px 999px 10px 10px;border:1px solid rgba(255,255,255,.16)}
+.arch::after{content:"";position:absolute;width:140%;height:60%;left:-20%;top:-10%;background:radial-gradient(ellipse at center,rgba(199,215,205,.35),transparent 65%)}
+.arch-in{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding:0 24px 38px;color:#f1ede5;text-align:center;z-index:2}
+.rate{font-family:var(--serif);font-size:96px;line-height:.9;font-weight:500}
+.stars{letter-spacing:4px;color:#d9b17f;font-size:15px;margin:10px 0 8px}
+.rate-sub{font-size:13px;color:rgba(241,237,229,.72);line-height:1.45}
+.ring{position:absolute;width:118%;aspect-ratio:1;left:-9%;top:-14%;border:1px solid rgba(180,132,79,.35);border-radius:50%;animation:spin 40s linear infinite}
+.ring::after{content:"";position:absolute;width:9px;height:9px;border-radius:50%;background:var(--brass);top:50%;left:-5px}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+.scroll-hint{position:absolute;left:50%;bottom:22px;transform:translateX(-50%);width:1px;height:44px;background:linear-gradient(var(--ink),transparent);opacity:.3}
+
+/* sections */
+section{position:relative}
+.sec{padding:96px 0}
+.label{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--brass);font-weight:600;margin-bottom:18px;display:block}
+.sec h2{font-size:clamp(38px,9vw,72px);margin-bottom:22px}
+.intro{color:var(--muted);max-width:34em}
+
+/* services */
+.price-list{margin-top:48px;border-top:1px solid var(--line)}
+.row{display:grid;grid-template-columns:1fr auto;gap:6px 18px;padding:22px 0;border-bottom:1px solid var(--line);align-items:baseline;transition:padding .35s}
+.row h3{font-size:25px;line-height:1.15}
+.row p{grid-column:1/-1;font-size:14px;color:var(--muted);max-width:40em}
+.row .price{font-family:var(--serif);font-size:23px;white-space:nowrap;color:var(--deep)}
+.row .price small{font-family:var(--sans);font-size:12px;color:var(--muted);margin-right:4px}
+.note{font-size:13px;color:var(--muted);margin-top:22px}
+
+/* why */
+.why{background:var(--deep);color:#ece8df;overflow:hidden}
+.why .label{color:#d9b17f}
+.why .intro{color:rgba(236,232,223,.65)}
+.why-list{margin-top:56px;display:grid;gap:0}
+.why-item{display:grid;grid-template-columns:44px 1fr;gap:6px 16px;padding:30px 0;border-top:1px solid rgba(255,255,255,.12)}
+.why-item .n{font-family:var(--serif);font-size:20px;color:#d9b17f;padding-top:4px}
+.why-item h3{font-size:30px;line-height:1.1}
+.why-item p{grid-column:2;color:rgba(236,232,223,.7);font-size:15px;max-width:30em}
+.why-glow{position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(199,215,205,.16),transparent 65%);right:-260px;top:-200px;pointer-events:none}
+
+/* process */
+.steps{margin-top:56px;display:grid;gap:0;counter-reset:s;position:relative}
+.step{position:relative;padding:0 0 40px 52px}
+.step::before{counter-increment:s;content:counter(s);position:absolute;left:0;top:0;width:34px;height:34px;border-radius:50%;border:1px solid var(--ink);display:grid;place-items:center;font-family:var(--serif);font-size:18px;background:var(--paper)}
+.step::after{content:"";position:absolute;left:17px;top:38px;bottom:4px;width:1px;background:var(--line)}
+.step:last-child::after{display:none}
+.step h3{font-size:28px;margin-bottom:8px;line-height:1.1}
+.step p{color:var(--muted);font-size:15px;max-width:26em}
+
+/* faq */
+.faq{background:var(--paper-2)}
+.faq-list{margin-top:44px;border-top:1px solid var(--line)}
+details{border-bottom:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:24px 0;font-family:var(--serif);font-size:24px;line-height:1.2}
+summary::-webkit-details-marker{display:none}
+summary .pm{flex:none;width:30px;height:30px;border-radius:50%;border:1px solid var(--line);position:relative;transition:transform .35s,background .35s}
+summary .pm::before,summary .pm::after{content:"";position:absolute;left:50%;top:50%;width:11px;height:1px;background:var(--ink);transform:translate(-50%,-50%)}
+summary .pm::after{transform:translate(-50%,-50%) rotate(90deg);transition:transform .35s}
+details[open] summary .pm{background:var(--ink)}
+details[open] summary .pm::before,details[open] summary .pm::after{background:var(--paper)}
+details[open] summary .pm::after{transform:translate(-50%,-50%) rotate(0)}
+.ans{padding:0 0 26px;color:#46504c;max-width:40em;font-size:15px}
+
+/* contacts */
+.contacts .grid{display:grid;gap:48px;margin-top:44px}
+.phones a{display:block;font-family:var(--serif);font-size:clamp(34px,9vw,56px);line-height:1.15;transition:color .3s}
+.phones a:hover{color:var(--brass)}
+.phones span{display:block;font-size:13px;color:var(--muted);margin:2px 0 22px}
+.btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:10px}
+.btn-wa{background:#1f7a55;color:#fff}
+.btn-wa:hover{background:#17623f}
+.btn-tg{background:#2a7fb8;color:#fff}
+.btn-tg:hover{background:#21699a}
+.addr{position:relative;border-radius:200px 200px 20px 20px;background:linear-gradient(165deg,var(--mint),var(--sage));padding:90px 28px 34px;overflow:hidden}
+.addr::before{content:"";position:absolute;inset:12px;border-radius:200px 200px 12px 12px;border:1px solid rgba(22,33,31,.12);pointer-events:none}
+.addr .city{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.addr h3{font-size:clamp(36px,9vw,52px);margin:10px 0 14px}
+.addr p{font-size:14px;color:#46504c;margin-bottom:22px}
+.addr a.map{position:relative;z-index:1;display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:14px;border-bottom:1px solid var(--ink);padding-bottom:2px}
+
+footer{padding:40px 0 110px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+footer .wrap{display:flex;flex-direction:column;gap:6px}
+.demo{font-size:11px;opacity:.7}
+
+/* mobile bar */
+.bar{position:fixed;left:12px;right:12px;bottom:12px;z-index:60;display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:8px;border-radius:999px;background:rgba(22,33,31,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);transform:translateY(130%);transition:transform .45s cubic-bezier(.2,.8,.2,1);padding-bottom:calc(8px + env(safe-area-inset-bottom)/2)}
+.bar.show{transform:none}
+.bar a{height:46px;border-radius:999px;display:flex;align-items:center;justify-content:center;gap:8px;font-weight:600;font-size:14px;color:#fff}
+.bar a:first-child{background:var(--paper);color:var(--ink)}
+.bar a:last-child{background:#1f7a55}
+.bar svg{width:16px;height:16px}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+.d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}.d4{transition-delay:.32s}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.ring{animation:none}html{scroll-behavior:auto}}
+
+/* desktop */
+@media (min-width:860px){
+  :root{--pad:40px}
+  .nav{display:flex}
+  .hero .wrap{grid-template-columns:1.25fr .75fr;align-items:center;gap:60px}
+  .arch-box{width:340px;justify-self:end}
+  .sec{padding:140px 0}
+  .head-split{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:end}
+  .row{grid-template-columns:1.1fr 1.4fr auto;gap:40px;padding:30px 0}
+  .row p{grid-column:auto;font-size:15px}
+  .row:hover{padding-left:14px}
+  .row h3{font-size:30px}
+  .row .price{font-size:28px}
+  .why-list{grid-template-columns:1fr 1fr;column-gap:80px}
+  .why-item h3{font-size:36px}
+  .steps{grid-template-columns:repeat(4,1fr);gap:32px}
+  .step{padding:56px 0 0}
+  .step::before{left:0;top:0}
+  .step::after{left:46px;right:-24px;top:17px;bottom:auto;width:auto;height:1px}
+  summary{font-size:30px;padding:30px 0}
+  .contacts .grid{grid-template-columns:1.1fr .9fr;align-items:center;gap:80px}
+  .addr{padding:130px 48px 48px}
+  .bar{display:none}
+  footer{padding-bottom:40px}
+  footer .wrap{flex-direction:row;justify-content:space-between}
+}
+</style>
+</head>
+<body>
+
+<header class="top" id="top">
+  <div class="wrap">
+    <a href="#" class="logo">Вильнюс<small>стоматология</small></a>
+    <nav class="nav">
+      <a href="#services">Услуги</a>
+      <a href="#why">О клинике</a>
+      <a href="#process">Как проходит приём</a>
+      <a href="#faq">Вопросы</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+    <a class="top-call" href="tel:+73512632083">263-20-83</a>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="hero-bg"><div class="orb a"></div><div class="orb b"></div></div>
+  <div class="wrap">
+    <div>
+      <span class="eyebrow rv">Челябинск · Орджоникидзе, 32</span>
+      <h1 class="rv d1">Зубы без&nbsp;страха и&nbsp;<em>лишних</em> счетов</h1>
+      <p class="lead rv d2">Стоматология «Вильнюс». Лечим, чистим, восстанавливаем и ставим импланты. План лечения и стоимость обсуждаем до того, как врач возьмёт инструмент.</p>
+      <div class="cta rv d3">
+        <a class="btn btn-dark" href="tel:+79049317607">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+          Записаться на приём
+        </a>
+        <a class="btn btn-line" href="https://wa.me/79049317607" target="_blank" rel="noopener">Написать в WhatsApp</a>
+      </div>
+    </div>
+    <div class="arch-box rv d2" aria-label="Рейтинг в 2ГИС 4.9">
+      <div class="ring"></div>
+      <div class="arch">
+        <div class="arch-in">
+          <div class="rate">4,9</div>
+          <div class="stars">★★★★★</div>
+          <div class="rate-sub">рейтинг в 2ГИС<br>по 55 отзывам пациентов</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-hint"></div>
+</section>
+
+<section class="sec" id="services">
+  <div class="wrap">
+    <div class="head-split">
+      <div>
+        <span class="label rv">Услуги и цены</span>
+        <h2 class="rv d1">Что мы делаем</h2>
+      </div>
+      <p class="intro rv d2">Цены ориентировочные. Точную сумму врач назовёт после осмотра и снимка, и она не вырастет посреди лечения.</p>
+    </div>
+
+    <div class="price-list">
+      <div class="row rv">
+        <h3>Консультация и осмотр</h3>
+        <p>Смотрим все зубы, а не только тот, что болит. Объясняем, что срочно, а что может подождать.</p>
+        <div class="price"><small>от</small>500 ₽</div>
+      </div>
+      <div class="row rv">
+        <h3>Профессиональная гигиена</h3>
+        <p>Ультразвук, Air Flow, полировка и фторирование. Снимаем камень и налёт, которые не берёт щётка.</p>
+        <div class="price"><small>от</small>3 500 ₽</div>
+      </div>
+      <div class="row rv">
+        <h3>Лечение кариеса</h3>
+        <p>Под анестезией, с пломбой из светоотверждаемого композита в цвет зуба.</p>
+        <div class="price"><small>от</small>3 000 ₽</div>
+      </div>
+      <div class="row rv">
+        <h3>Лечение каналов</h3>
+        <p>Когда воспалён нерв. Чистим и пломбируем каналы, чтобы сохранить зуб, а не удалять его.</p>
+        <div class="price"><small>от</small>6 000 ₽</div>
+      </div>
+      <div class="row rv">
+        <h3>Удаление зуба</h3>
+        <p>Простое и сложное удаление, в том числе зубов мудрости.</p>
+        <div class="price"><small>от</small>2 000 ₽</div>
+      </div>
+      <div class="row rv">
+        <h3>Коронки</h3>
+        <p>Металлокерамика или диоксид циркония. Подбираем оттенок под соседние зубы.</p>
+        <div class="price"><small>от</small>9 000 ₽</div>
+      </div>
+      <div class="row rv">
+        <h3>Имплантация</h3>
+        <p>Восстановление зуба на импланте. Перед операцией делаем снимок и составляем план с ценой.</p>
+        <div class="price"><small>от</small>30 000 ₽</div>
+      </div>
+      <div class="row rv">
+        <h3>Отбеливание</h3>
+        <p>Осветление эмали в кабинете после гигиены. Говорим заранее, на сколько тонов реально получится.</p>
+        <div class="price"><small>от</small>12 000 ₽</div>
+      </div>
+    </div>
+    <p class="note rv">Список услуг и цены уточняйте по телефону.</p>
+  </div>
+</section>
+
+<section class="sec why" id="why">
+  <div class="why-glow"></div>
+  <div class="wrap">
+    <span class="label rv">Почему к нам</span>
+    <h2 class="rv d1">Четыре вещи, которые<br>мы делаем всегда</h2>
+    <div class="why-list">
+      <div class="why-item rv">
+        <span class="n">01</span>
+        <h3>Цена до начала лечения</h3>
+        <p>Вы знаете сумму заранее. Если по ходу работы что-то меняется, сначала говорим вам и только потом продолжаем.</p>
+      </div>
+      <div class="why-item rv d1">
+        <span class="n">02</span>
+        <h3>Не больно</h3>
+        <p>Лечим под местной анестезией. Перед уколом можем обработать десну гелем, чтобы не чувствовать и его.</p>
+      </div>
+      <div class="why-item rv d2">
+        <span class="n">03</span>
+        <h3>Объясняем, а не пугаем</h3>
+        <p>Показываем снимок, рассказываем варианты и что будет, если не лечить. Решение остаётся за вами.</p>
+      </div>
+      <div class="why-item rv d3">
+        <span class="n">04</span>
+        <h3>4,9 в 2ГИС</h3>
+        <p>Такую оценку клинике поставили пациенты в 55 отзывах. Их можно прочитать в карточке «Вильнюс» в 2ГИС.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="process">
+  <div class="wrap">
+    <span class="label rv">Как проходит приём</span>
+    <h2 class="rv d1">От звонка до улыбки</h2>
+    <div class="steps">
+      <div class="step rv">
+        <h3>Запись</h3>
+        <p>Звоните или пишете в WhatsApp. Подбираем удобное время.</p>
+      </div>
+      <div class="step rv d1">
+        <h3>Осмотр</h3>
+        <p>Врач смотрит зубы, при необходимости делает снимок.</p>
+      </div>
+      <div class="step rv d2">
+        <h3>План и цена</h3>
+        <p>Расписываем этапы и стоимость каждого. Можно начать с самого срочного.</p>
+      </div>
+      <div class="step rv d3">
+        <h3>Лечение</h3>
+        <p>Работаем по плану и приглашаем на контрольный осмотр.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec faq" id="faq">
+  <div class="wrap">
+    <span class="label rv">Вопросы</span>
+    <h2 class="rv d1">Что обычно спрашивают</h2>
+    <div class="faq-list">
+      <details class="rv">
+        <summary>Больно ли лечить зубы<span class="pm"></span></summary>
+        <div class="ans">Нет. Перед лечением делаем местную анестезию, а место укола можно предварительно обезболить гелем. Если вы сильно волнуетесь, скажите врачу, он объяснит каждый шаг.</div>
+      </details>
+      <details class="rv">
+        <summary>Можно прийти, если сильно болит прямо сейчас<span class="pm"></span></summary>
+        <div class="ans">Позвоните по телефону и опишите, что беспокоит. Постараемся найти ближайшее время, чтобы снять боль.</div>
+      </details>
+      <details class="rv">
+        <summary>Сколько будет стоить лечение<span class="pm"></span></summary>
+        <div class="ans">Цены на сайте ориентировочные. Точную сумму врач назовёт после осмотра, и вы узнаете её до начала работы.</div>
+      </details>
+      <details class="rv">
+        <summary>Можно записаться через мессенджер<span class="pm"></span></summary>
+        <div class="ans">Да, напишите нам в WhatsApp или Telegram на номер +7 904 931-76-07. Ответим и предложим время.</div>
+      </details>
+      <details class="rv">
+        <summary>Что взять с собой на первый приём<span class="pm"></span></summary>
+        <div class="ans">Паспорт. Если у вас есть свежие снимки зубов или выписки от другого врача, захватите и их, это поможет быстрее составить план.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="sec contacts" id="contacts">
+  <div class="wrap">
+    <span class="label rv">Контакты</span>
+    <h2 class="rv d1">Запишитесь на осмотр</h2>
+    <div class="grid">
+      <div>
+        <div class="phones rv">
+          <a href="tel:+79049317607">+7 904 931-76-07</a>
+          <span>мобильный, WhatsApp и Telegram</span>
+          <a href="tel:+73512632083">+7 351 263-20-83</a>
+          <span>городской</span>
+        </div>
+        <div class="btns rv d1">
+          <a class="btn btn-dark" href="tel:+79049317607">Позвонить</a>
+          <a class="btn btn-wa" href="https://wa.me/79049317607" target="_blank" rel="noopener">WhatsApp</a>
+          <a class="btn btn-tg" href="https://t.me/+79049317607" target="_blank" rel="noopener">Telegram</a>
+        </div>
+      </div>
+      <div class="addr rv d2">
+        <div class="city">Челябинск</div>
+        <h3>Орджоникидзе, 32</h3>
+        <p>Стоматология «Вильнюс». Часы работы уточняйте по телефону.</p>
+        <a class="map" href="https://2gis.ru/chelyabinsk/search/%D0%9E%D1%80%D0%B4%D0%B6%D0%BE%D0%BD%D0%B8%D0%BA%D0%B8%D0%B4%D0%B7%D0%B5%2032" target="_blank" rel="noopener">Открыть в 2ГИС →</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="y">2026</span> Стоматология «Вильнюс», Челябинск</span>
+    <span class="demo">Демо-версия сайта</span>
+  </div>
+</footer>
+
+<div class="bar" id="bar">
+  <a href="tel:+79049317607"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>Позвонить</a>
+  <a href="https://wa.me/79049317607" target="_blank" rel="noopener">WhatsApp</a>
+</div>
+
+<script>
+(function(){
+  var top=document.getElementById('top'),bar=document.getElementById('bar');
+  function onScroll(){
+    var y=window.scrollY;
+    top.classList.toggle('scrolled',y>20);
+    bar.classList.toggle('show',y>window.innerHeight*0.7);
+  }
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+  var els=document.querySelectorAll('.rv');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(en){
+      en.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+    },{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+    els.forEach(function(el){io.observe(el);});
+  }else{els.forEach(function(el){el.classList.add('in');});}
+
+  var ds=document.querySelectorAll('details');
+  ds.forEach(function(d){d.addEventListener('toggle',function(){
+    if(d.open)ds.forEach(function(o){if(o!==d)o.open=false;});
+  });});
+
+  document.getElementById('y').textContent=new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
